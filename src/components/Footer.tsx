@@ -8,16 +8,16 @@ const Footer = () => {
           <div className="flex items-center gap-3">
             <img src={logoIcon} alt="Axis11" className="h-6 w-6 brightness-0 invert opacity-60" />
             <span className="text-xs tracking-widest uppercase text-primary-foreground/40">
-              Axis11 Capital Limited
+              Axis11 Capital
             </span>
           </div>
           <p className="text-xs text-primary-foreground/30">
-            © {new Date().getFullYear()} Axis11 Capital Limited. All rights reserved.
+            © {new Date().getFullYear()} Axis11 Capital. All rights reserved.
           </p>
         </div>
-        <p className="text-center text-[10px] text-primary-foreground/20 mt-6 max-w-3xl mx-auto leading-relaxed">
-          This website is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer 
-          to buy any securities. Past performance is not indicative of future results.
+        <p className="text-center text-xs text-primary-foreground/60 mt-6 max-w-3xl mx-auto leading-relaxed">
+          Research and commentary are for general information and do not constitute personalised financial advice
+          or an offer of investment products or services. Views may change as new information becomes available.
         </p>
       </div>
     </footer>

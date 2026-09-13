@@ -1,43 +1,43 @@
 const strategies = [
   {
     number: "01",
-    title: "Statistical Arbitrage",
+    title: "Global Macro",
     description:
-      "Market-neutral strategies exploiting short-term pricing anomalies across correlated instruments using cointegration and mean-reversion models.",
+      "Inflation, interest rates, currencies, and policy: examining how economic changes affect global markets.",
   },
   {
     number: "02",
-    title: "Systematic Macro",
+    title: "Equities & Technology",
     description:
-      "Trend-following and momentum strategies across global equities, fixed income, commodities, and currencies, driven by quantitative signals.",
+      "Company fundamentals, valuations, and industry cycles, including semiconductors and AI infrastructure.",
   },
   {
     number: "03",
-    title: "Machine Learning Alpha",
+    title: "Commodities & Market Risk",
     description:
-      "Deep learning and ensemble methods applied to alternative data sources — satellite imagery, NLP sentiment, and order flow analytics.",
+      "Supply and demand, energy markets, geopolitical developments, and the risks that connect asset classes.",
   },
 ];
 
 const stats = [
-  { value: "24/7", label: "Market Monitoring" },
-  { value: "10+", label: "Years of Research" },
-  { value: "Multi", label: "Asset Class" },
+  { value: "Data", label: "Evidence-led analysis" },
+  { value: "Ideas", label: "Open discussion" },
+  { value: "Multi", label: "Asset perspectives" },
   { value: "Global", label: "Market Coverage" },
 ];
 
 const StrategySection = () => {
   return (
-    <section id="strategy" className="py-24 md:py-32 bg-navy">
+    <section id="research" className="py-24 md:py-32 bg-navy">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-sm tracking-widest uppercase text-gold font-medium mb-3">Our Approach</p>
+          <p className="text-sm tracking-widest uppercase text-gold font-medium mb-3">Research Focus</p>
           <h2 className="font-heading text-3xl md:text-4xl font-semibold text-primary-foreground mb-6">
-            Investment Strategies
+            What We Explore
           </h2>
           <p className="text-base md:text-lg leading-relaxed text-primary-foreground/60">
-            Our strategies are built on rigorous mathematical foundations, backtested across decades 
-            of market data, and continuously refined through live trading feedback loops.
+            Research will cover the themes below, connecting data with market context and clearly
+            distinguishing observations from assumptions. Articles and commentary are coming soon.
           </p>
         </div>
 

@@ -28,7 +28,7 @@ const HeroSection = () => {
 
         <div className="animate-fade-in-up-delay-2 mt-3">
           <p className="text-sm md:text-base tracking-widest uppercase text-gold font-medium">
-            Quantitative Investment Management
+            Investment Research & Market Commentary
           </p>
         </div>
 
