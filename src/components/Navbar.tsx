@@ -3,8 +3,8 @@ import logoIcon from "@/assets/axis11-icon.png";
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Strategy", href: "#strategy" },
-  { label: "Team", href: "#team" },
+  { label: "Research", href: "#research" },
+  { label: "Author", href: "#author" },
   { label: "Contact", href: "#contact" },
 ];
 

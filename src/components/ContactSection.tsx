@@ -7,11 +7,11 @@ const ContactSection = () => {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-sm tracking-widest uppercase text-gold font-medium mb-3">Get in Touch</p>
           <h2 className="font-heading text-3xl md:text-4xl font-semibold text-primary-foreground mb-6">
-            Contact Us
+            Get in Touch
           </h2>
           <p className="text-base md:text-lg leading-relaxed text-primary-foreground/60">
-            We welcome inquiries from institutional investors, family offices, and qualified individuals 
-            interested in learning more about our strategies.
+            Questions about a research topic, feedback on a market view, or an idea for future commentary?
+            Get in touch with Greg by email.
           </p>
         </div>
 
@@ -22,8 +22,8 @@ const ContactSection = () => {
             </div>
             <div>
               <p className="text-xs tracking-widest uppercase text-primary-foreground/50 mb-1">Email</p>
-              <a href="mailto:info@axis11capital.com" className="text-primary-foreground hover:text-gold transition-colors">
-                info@axis11capital.com
+              <a href="mailto:greg.kkang@gmail.com" className="text-primary-foreground hover:text-gold transition-colors">
+                greg.kkang@gmail.com
               </a>
             </div>
           </div>
@@ -34,17 +34,17 @@ const ContactSection = () => {
             </div>
             <div>
               <p className="text-xs tracking-widest uppercase text-primary-foreground/50 mb-1">Location</p>
-              <p className="text-primary-foreground">Hong Kong</p>
+              <p className="text-primary-foreground">New Zealand</p>
             </div>
           </div>
         </div>
 
         <div className="text-center mt-12">
           <a
-            href="mailto:info@axis11capital.com"
+            href="mailto:greg.kkang@gmail.com"
             className="inline-block bg-gold text-accent-foreground px-10 py-3 text-sm font-semibold tracking-wider uppercase rounded-sm hover:bg-gold-light transition-colors duration-300"
           >
-            Schedule a Meeting
+            Email Greg
           </a>
         </div>
       </div>

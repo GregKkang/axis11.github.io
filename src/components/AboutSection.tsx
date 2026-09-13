@@ -3,27 +3,27 @@ import { TrendingUp, Shield, BarChart3, Cpu } from "lucide-react";
 const pillars = [
   {
     icon: Cpu,
-    title: "Algorithmic Alpha",
+    title: "Quantitative Research",
     description:
-      "We deploy proprietary algorithms that identify and exploit market inefficiencies across asset classes with systematic precision.",
+      "Exploring market behaviour through data, factor analysis, and systematic research.",
   },
   {
     icon: BarChart3,
     title: "Data-Driven Insights",
     description:
-      "Our models process vast datasets — from traditional market data to alternative signals — uncovering patterns invisible to the human eye.",
+      "Connecting economic releases, company fundamentals, and market signals to develop clearly reasoned views.",
   },
   {
     icon: Shield,
-    title: "Risk Management",
+    title: "Risk & Scenarios",
     description:
-      "Rigorous risk controls are embedded at every level — from portfolio construction to real-time position monitoring and drawdown limits.",
+      "Examining alternative outcomes, challenging assumptions, and identifying what could change a market view.",
   },
   {
     icon: TrendingUp,
-    title: "Consistent Returns",
+    title: "Market Commentary",
     description:
-      "We target risk-adjusted returns with low correlation to traditional benchmarks, delivering value through market cycles.",
+      "Putting market developments in context, with a focus on evidence, uncertainty, and the longer-term picture.",
   },
 ];
 
@@ -32,14 +32,14 @@ const AboutSection = () => {
     <section id="about" className="py-24 md:py-32 bg-cream">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-sm tracking-widest uppercase text-gold-muted font-medium mb-3">Who We Are</p>
+          <p className="text-sm tracking-widest uppercase text-gold-muted font-medium mb-3">About Axis11</p>
           <h2 className="font-heading text-3xl md:text-4xl font-semibold text-navy mb-6">
-            Precision Meets Performance
+            Research. Perspective. Discussion.
           </h2>
           <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
-            Axis11 Capital Limited is a quantitative investment management firm that leverages 
-            advanced mathematical models, machine learning, and systematic trading strategies 
-            to generate superior risk-adjusted returns for institutional and qualified investors.
+            Axis11 is a New Zealand-based platform for investment research and market commentary.
+            It brings a quantitative perspective to global markets, sharing analysis and ideas
+            for readers interested in understanding the forces behind market moves.
           </p>
         </div>
 
