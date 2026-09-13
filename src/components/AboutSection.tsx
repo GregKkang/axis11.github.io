@@ -3,9 +3,9 @@ import { TrendingUp, Shield, BarChart3, Cpu } from "lucide-react";
 const pillars = [
   {
     icon: Cpu,
-    title: "Quantitative Research",
+    title: "Factor Research",
     description:
-      "Exploring market behaviour through data, factor analysis, and systematic research.",
+      "Studying quality, growth, value, and momentum to understand return drivers and identify opportunities through systematic factor analysis.",
   },
   {
     icon: BarChart3,
@@ -15,9 +15,9 @@ const pillars = [
   },
   {
     icon: Shield,
-    title: "Risk & Scenarios",
+    title: "Investment Opportunities",
     description:
-      "Examining alternative outcomes, challenging assumptions, and identifying what could change a market view.",
+      "Seeking investment opportunities across asset classes by comparing fundamentals, valuations, and market conditions.",
   },
   {
     icon: TrendingUp,
