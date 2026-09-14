@@ -12,7 +12,6 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         <a href={home} aria-label="Axis11 Capital home" className="inline-flex items-baseline gap-2 text-primary-foreground">
           <span className="font-sans text-xl font-semibold leading-none tracking-wide [font-variant-numeric:lining-nums]">AXIS11</span>
-          <span className="font-sans text-sm font-medium leading-none tracking-[0.16em]">CAPITAL</span>
         </a>
         <div className="hidden md:flex items-center gap-8">
           <a href={`${home}#about`} className={linkStyle}>About</a>
