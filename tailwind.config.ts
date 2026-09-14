@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
+import typography from "@tailwindcss/typography";
 
 export default {
   darkMode: ["class"],
@@ -100,7 +102,47 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      // Long-form article body. Applied as `prose prose-axis11`.
+      typography: {
+        axis11: {
+          css: {
+            "--tw-prose-body": "hsl(var(--foreground) / 0.85)",
+            "--tw-prose-headings": "hsl(var(--navy))",
+            "--tw-prose-lead": "hsl(var(--muted-foreground))",
+            "--tw-prose-links": "hsl(var(--navy))",
+            "--tw-prose-bold": "hsl(var(--navy))",
+            "--tw-prose-counters": "hsl(var(--gold-muted))",
+            "--tw-prose-bullets": "hsl(var(--gold-muted))",
+            "--tw-prose-hr": "hsl(var(--border))",
+            "--tw-prose-quotes": "hsl(var(--navy))",
+            "--tw-prose-quote-borders": "hsl(var(--gold))",
+            "--tw-prose-captions": "hsl(var(--muted-foreground))",
+            "--tw-prose-code": "hsl(var(--navy))",
+            "--tw-prose-th-borders": "hsl(var(--border))",
+            "--tw-prose-td-borders": "hsl(var(--border))",
+            maxWidth: "none",
+            fontSize: "1.0625rem",
+            lineHeight: "1.75",
+            h2: { fontFamily: "var(--font-heading)", fontWeight: "600", marginTop: "2.5em" },
+            h3: { fontFamily: "var(--font-heading)", fontWeight: "600" },
+            h4: { fontFamily: "var(--font-heading)", fontWeight: "600" },
+            a: { textDecorationThickness: "1px", textUnderlineOffset: "3px" },
+            blockquote: { fontStyle: "normal", fontWeight: "400" },
+            "thead th": { fontWeight: "600" },
+            "td, th": { paddingInlineStart: "0.75em", paddingInlineEnd: "0.75em" },
+            // Footnote block rendered by markdown-it-footnote.
+            ".footnotes": {
+              marginTop: "3em",
+              paddingTop: "1.5em",
+              borderTop: "1px solid hsl(var(--border))",
+              fontSize: "0.875rem",
+              color: "hsl(var(--muted-foreground))",
+            },
+            ".footnotes hr": { display: "none" },
+          },
+        },
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate, typography],
 } satisfies Config;
