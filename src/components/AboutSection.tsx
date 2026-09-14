@@ -5,7 +5,7 @@ const pillars = [
     icon: Cpu,
     title: "Factor Research",
     description:
-      "Studying quality, growth, value, and momentum to understand return drivers and identify opportunities through systematic factor analysis.",
+      "Studying various factors including quality, growth, value, and momentum to understand return drivers and identify opportunities through systematic analysis.",
   },
   {
     icon: BarChart3,
