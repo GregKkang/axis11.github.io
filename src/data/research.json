@@ -1,6 +1,6 @@
 [
   {"slug":"global-macro","number":"01","title":"Global Macro","description":"Inflation, interest rates, currencies, and policy — understanding the economic forces shaping global markets.","topics":["Economies","Central banks & Fiscal policy","Geopolitics"]},
-  {"slug":"technology","number":"02","title":"Technology","description":"Technology and industry cycles, from semiconductors and software to AI infrastructure.","topics":["Semiconductors","Software & Digital platforms","Artficial Intelligence"]},
+  {"slug":"technology","number":"02","title":"Technology","description":"Technology and industry cycles, from semiconductors and software to AI infrastructure.","topics":["Semiconductors","Software & Digital platforms","Artificial Intelligence"]},
   {"slug":"equities-bonds","number":"03","title":"Equities & Bonds","description":"Fundamentals, factor signals, valuations, and yields — exploring opportunities across stocks and bonds.","topics":["Fundamentals & Valuations","Factor","Bond & Credit"]},
   {"slug":"commodities","number":"04","title":"Commodities","description":"Supply and demand across energy, metals, and cryptocurrency.","topics":["Oil, Gas & Energy markets","Metals & Industrial demand","Cryptocurrency"]}
 ]
