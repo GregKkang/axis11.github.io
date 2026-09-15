@@ -36,6 +36,8 @@ export const LANGUAGE_LABELS: Record<string, string> = { en: "English", ko: "한
 export const allCategories = categories as Category[];
 export const allArticles = articles as Article[];
 
+const base = import.meta.env.BASE_URL;
+
 export const findCategory = (slug?: string) => allCategories.find((c) => c.slug === slug);
 
 export const articlesInCategory = (categorySlug: string) =>
@@ -44,7 +46,6 @@ export const articlesInCategory = (categorySlug: string) =>
 export const findArticle = (categorySlug?: string, articleSlug?: string) =>
   allArticles.find((a) => a.category === categorySlug && a.slug === articleSlug);
 
-const base = import.meta.env.BASE_URL;
 
 export const categoryUrl = (categorySlug: string) => `${base}research/${categorySlug}/`;
 
@@ -71,7 +72,15 @@ export async function loadArticleBody(
   const loader = bodies[`../data/articles/${categorySlug}--${articleSlug}--${lang}.json`];
   if (!loader) return [];
   const module = await loader();
-  return module.blocks ?? [];
+  const blocks = module.blocks ?? [];
+
+  // Image sources are stored with a placeholder because the build step has no
+  // way to know the site's base path. Resolve it here, where Vite does.
+  return blocks.map((block) =>
+    block.kind === "html"
+      ? { ...block, html: block.html.replace(/@@BASE@@/g, base) }
+      : block,
+  );
 }
 
 export function formatDate(iso: string, lang: string) {

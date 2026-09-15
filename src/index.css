@@ -169,3 +169,48 @@
   animation: fade-in-up 0.8s ease-out 0.4s forwards;
   opacity: 0;
 }
+
+@layer components {
+  /*
+   * Research charts carry axis labels and annotations that become unreadable
+   * at the article's reading width, so figures break out of the prose column
+   * on wide screens while the text stays at a comfortable measure.
+   */
+  .prose-axis11 figure {
+    margin-block: 2.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .prose-axis11 figure {
+      width: min(1120px, calc(100vw - 4rem));
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .prose-axis11 figure img {
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid hsl(var(--border));
+  }
+
+  .prose-axis11 figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: hsl(var(--muted-foreground));
+  }
+}
+
+@layer components {
+  /* Tables scroll within their own box so the page never scrolls sideways. */
+  .prose-axis11 .table-scroll {
+    overflow-x: auto;
+    margin-block: 1.5rem;
+  }
+
+  .prose-axis11 .table-scroll > table {
+    margin-block: 0;
+    min-width: 30rem;
+  }
+}

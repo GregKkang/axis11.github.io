@@ -37,6 +37,9 @@ export type ChartSeries = {
 };
 
 export type ChartSpec = {
+  xType: "date" | "category";
+  yZero: boolean;
+  xTicks: string[] | null;
   type: "line" | "area" | "bar";
   title: string | null;
   subtitle: string | null;
@@ -48,8 +51,19 @@ export type ChartSpec = {
   height: number;
   stacked: boolean;
   series: ChartSeries[];
-  data: Record<string, string | number>[];
+  data: Record<string, string | number | null>[];
 };
+
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+/** Axis ticks stay terse ("Mar"); the tooltip spells the day out ("9 Sep 2026"). */
+function formatDate(value: unknown, style: "tick" | "full") {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(value ?? ""));
+  if (!match) return String(value ?? "");
+  const [, year, month, day] = match;
+  const name = MONTHS[Number(month) - 1] ?? month;
+  return style === "tick" ? name : `${Number(day)} ${name} ${year}`;
+}
 
 const colorFor = (series: ChartSeries, index: number) => series.color ?? PALETTE[index % PALETTE.length];
 
@@ -64,16 +78,20 @@ function ChartTooltip({
   payload,
   label,
   format,
+  xType,
 }: {
   active?: boolean;
   payload?: { dataKey?: string | number; name?: string; value?: number; color?: string }[];
   label?: string | number;
   format: ChartSpec["format"];
+  xType: ChartSpec["xType"];
 }) {
   if (!active || !payload?.length) return null;
   return (
     <div className="rounded-md border border-border bg-card px-3 py-2 shadow-lg">
-      <p className="mb-1.5 text-xs font-medium uppercase tracking-wider text-muted-foreground">{label}</p>
+      <p className="mb-1.5 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+        {xType === "date" ? formatDate(label, "full") : label}
+      </p>
       <ul className="space-y-1">
         {payload.map((entry) => (
           <li key={String(entry.dataKey)} className="flex items-center gap-2 text-sm">
@@ -120,7 +138,9 @@ function frame(spec: ChartSpec) {
       tick={{ fill: INK_MUTED, fontSize: longLabels ? 11 : 12 }}
       tickLine={false}
       axisLine={{ stroke: GRID }}
-      interval={forceEveryTick ? 0 : "preserveStartEnd"}
+      ticks={spec.xType === "date" && spec.xTicks ? spec.xTicks : undefined}
+      tickFormatter={spec.xType === "date" ? (v: string) => formatDate(v, "tick") : undefined}
+      interval={spec.xType === "date" ? 0 : forceEveryTick ? 0 : "preserveStartEnd"}
       angle={longLabels ? -20 : 0}
       textAnchor={longLabels ? "end" : "middle"}
       height={longLabels ? 64 : 30}
@@ -137,6 +157,10 @@ function frame(spec: ChartSpec) {
       tickLine={false}
       axisLine={false}
       width={52}
+      // Bars encode magnitude and must sit on zero; a line or area of price
+      // levels must not, or the whole series is squashed into a corner of the
+      // plot. `yZero: true` forces the baseline back when a chart needs it.
+      domain={spec.type === "bar" || spec.yZero ? [0, "auto"] : ["auto", "auto"]}
       tickFormatter={(value: number) => formatValue(value, spec.format)}
       label={
         spec.yLabel
@@ -147,7 +171,7 @@ function frame(spec: ChartSpec) {
     <Tooltip
       key="tip"
       cursor={{ stroke: INK_MUTED, strokeWidth: 1, strokeDasharray: "3 3" }}
-      content={<ChartTooltip format={spec.format} />}
+      content={<ChartTooltip format={spec.format} xType={spec.xType} />}
     />,
   ];
 }
@@ -164,7 +188,13 @@ function zeroLine(spec: ChartSpec) {
   return hasNegative ? <ReferenceLine key="zero" y={0} stroke={INK_MUTED} strokeWidth={1.5} /> : null;
 }
 
-const ArticleChart = ({ spec }: { spec: ChartSpec }) => {
+const STRINGS = {
+  en: { show: "Show data", hide: "Hide data", source: "Source" },
+  ko: { show: "데이터 보기", hide: "데이터 숨기기", source: "출처" },
+} as const;
+
+const ArticleChart = ({ spec, lang = "en" }: { spec: ChartSpec; lang?: string }) => {
+  const t = STRINGS[lang as keyof typeof STRINGS] ?? STRINGS.en;
   const { series, data, height, stacked, format } = spec;
   const longLabels = hasLongLabels(spec);
   const margin = {
@@ -216,6 +246,7 @@ const ArticleChart = ({ spec }: { spec: ChartSpec }) => {
               strokeWidth={2}
               fill={colorFor(s, i)}
               fillOpacity={stacked ? 0.85 : 0.18}
+              connectNulls
               isAnimationActive={false}
             />
           ))}
@@ -237,6 +268,7 @@ const ArticleChart = ({ spec }: { spec: ChartSpec }) => {
             strokeWidth={2}
             strokeDasharray={DASHES[i % DASHES.length]}
             dot={false}
+            connectNulls
             activeDot={{ r: 4, strokeWidth: 2, stroke: "#ffffff" }}
             isAnimationActive={false}
           />
@@ -275,8 +307,8 @@ const ArticleChart = ({ spec }: { spec: ChartSpec }) => {
       {/* Table fallback: keeps the numbers reachable without colour or hover. */}
       <details className="mt-4 group">
         <summary className="cursor-pointer list-none text-xs font-medium uppercase tracking-widest text-gold-muted hover:text-navy">
-          <span className="group-open:hidden">Show data</span>
-          <span className="hidden group-open:inline">Hide data</span>
+          <span className="group-open:hidden">{t.show}</span>
+          <span className="hidden group-open:inline">{t.hide}</span>
         </summary>
         <div className="mt-3 overflow-x-auto">
           <table className="w-full border-collapse text-sm">
@@ -311,7 +343,7 @@ const ArticleChart = ({ spec }: { spec: ChartSpec }) => {
       </details>
 
       {spec.source && (
-        <figcaption className="mt-4 text-xs text-muted-foreground">Source: {spec.source}</figcaption>
+        <figcaption className="mt-4 text-xs text-muted-foreground">{t.source}: {spec.source}</figcaption>
       )}
     </figure>
   );

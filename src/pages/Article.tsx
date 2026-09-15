@@ -99,7 +99,7 @@ const Article = () => {
           ) : (
             blocks.map((block, index) =>
               block.kind === "chart" ? (
-                <ArticleChart key={index} spec={block.chart} />
+                <ArticleChart key={index} spec={block.chart} lang={version.lang} />
               ) : (
                 <div
                   key={index}

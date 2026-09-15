@@ -9,7 +9,7 @@
  * Nothing here ships to the browser — the markdown parser stays in Node.
  */
 
-import { readFile, writeFile, readdir, mkdir, rm } from "node:fs/promises";
+import { readFile, writeFile, readdir, mkdir, rm, copyFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -26,6 +26,9 @@ const INDEX_FILE = path.join(ROOT, "src", "data", "articles.json");
 /** One file per article + language, loaded on demand by the article view. */
 const BODY_DIR = path.join(ROOT, "src", "data", "articles");
 const CATEGORIES_FILE = path.join(ROOT, "src", "data", "research.json");
+/** Article images are copied here so Vite serves and ships them. */
+const ASSET_URL_DIR = "research-assets";
+const ASSET_DIR = path.join(ROOT, "public", ASSET_URL_DIR);
 
 /** Body payloads are addressed by this key from the client. */
 export const bodyKey = (category, slug, lang) => `${category}--${slug}--${lang}`;
@@ -71,6 +74,11 @@ md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
   }
   return defaultLinkOpen(tokens, idx, options, env, self);
 };
+
+// A source cited more than once renders by default as [4:2], [4:3] — the
+// sub-index is an internal detail for back-links. Readers should only ever see
+// the footnote's number; the anchor ids keep the sub-index and stay unique.
+md.renderer.rules.footnote_caption = (tokens, idx) => `[${Number(tokens[idx].meta.id + 1)}]`;
 
 /* ------------------------------------------------------------------ */
 /* Charts                                                              */
@@ -119,9 +127,13 @@ async function resolveChart(spec, articleDir, where) {
         // Keep the x field as text (e.g. "2026Q1"); coerce the rest when numeric.
         if (key === spec.x) {
           out[key] = value;
+        } else if (value === "") {
+          // An empty cell is a missing observation, not a zero. Null keeps it
+          // out of the plot so the series is never silently invented.
+          out[key] = null;
         } else {
           const n = Number(value);
-          out[key] = value !== "" && Number.isFinite(n) ? n : value;
+          out[key] = Number.isFinite(n) ? n : value;
         }
       }
       return out;
@@ -144,7 +156,31 @@ async function resolveChart(spec, articleDir, where) {
     }
   }
 
+  // A daily series has far too many points to label every one, so with
+  // `xType: "date"` the axis is ticked at the first observation of each month.
+  // The tick list is computed here rather than in the browser because it is a
+  // property of the data, not of the rendering.
+  let xTicks = null;
+  if (spec.xType === "date") {
+    const seen = new Set();
+    xTicks = [];
+    for (const row of data) {
+      const month = String(row[spec.x]).slice(0, 7);
+      if (!seen.has(month)) {
+        seen.add(month);
+        xTicks.push(row[spec.x]);
+      }
+    }
+    if (xTicks.length > 14) {
+      // Roughly quarterly once a chart spans more than about a year.
+      const step = Math.ceil(xTicks.length / 12);
+      xTicks = xTicks.filter((_, i) => i % step === 0);
+    }
+  }
+
   return {
+    xType: spec.xType === "date" ? "date" : "category",
+    xTicks,
     type: spec.type,
     title: spec.title ?? null,
     subtitle: spec.subtitle ?? null,
@@ -156,6 +192,7 @@ async function resolveChart(spec, articleDir, where) {
     format: spec.format === "percent" ? "percent" : "number",
     height: Number.isFinite(spec.height) ? spec.height : 320,
     stacked: spec.stacked === true,
+    yZero: spec.yZero === true,
     series: spec.series.map((s) => ({
       key: s.key,
       label: s.label ?? s.key,
@@ -164,6 +201,87 @@ async function resolveChart(spec, articleDir, where) {
     })),
     data,
   };
+}
+
+/* ------------------------------------------------------------------ */
+/* Images                                                              */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Copy images referenced by an article into `public/` and rewrite their `src`.
+ *
+ * Images live beside the markdown that uses them, which keeps an article
+ * self-contained, but that folder is not served. Each referenced file is copied
+ * under a per-article directory and the `src` is rewritten to point there.
+ *
+ * The site is served from a sub-path, so the rewritten `src` carries a
+ * `@@BASE@@` token rather than a hard-coded prefix; the client swaps in the
+ * real base URL when it loads the article. Absolute and remote sources are
+ * left untouched.
+ */
+async function withAssets(html, articleDir, assetPrefix, where) {
+  const sources = [...html.matchAll(/<img\b[^>]*?\bsrc="([^"]+)"/g)].map((m) => m[1]);
+  let out = html;
+
+  for (const src of new Set(sources)) {
+    if (/^(?:[a-z]+:)?\/\//i.test(src) || src.startsWith("/") || src.startsWith("data:")) continue;
+
+    const source = path.join(articleDir, src);
+    if (!existsSync(source)) {
+      fail(where, `image "${src}" was not found next to the article`);
+      continue;
+    }
+
+    const fileName = path.basename(src);
+    const targetDir = path.join(ASSET_DIR, assetPrefix);
+    await mkdir(targetDir, { recursive: true });
+    await copyFile(source, path.join(targetDir, fileName));
+
+    const replacement = `@@BASE@@${ASSET_URL_DIR}/${assetPrefix}/${fileName}`;
+    out = out.replaceAll(`src="${src}"`, `src="${replacement}" loading="lazy" decoding="async"`);
+  }
+
+  return out;
+}
+
+/**
+ * Promote a lone image into a <figure>, absorbing an immediately following
+ * all-italic paragraph as its <figcaption>. Markdown has no figure syntax, and
+ * the alternative — an image and a caption as two unrelated paragraphs — loses
+ * the association for screen readers.
+ */
+function withFigures(html) {
+  return html.replace(
+    /<p>(<img\b[^>]*>)<\/p>\s*(?:<p><em>([\s\S]*?)<\/em><\/p>)?/g,
+    (_match, img, caption) => {
+      // Charts are rendered far wider than the column they sit in, so link the
+      // figure to its own source — a reader who needs to read an axis label can
+      // open the image at full resolution.
+      const src = /\bsrc="([^"]+)"/.exec(img)?.[1];
+      const body = src
+        ? `<a href="${src}" target="_blank" rel="noopener noreferrer">${img}</a>`
+        : img;
+      return caption
+        ? `<figure>${body}<figcaption>${caption}</figcaption></figure>`
+        : `<figure>${body}</figure>`;
+    },
+  );
+}
+
+/**
+ * Give every table its own horizontal scroll container.
+ *
+ * A four-column table of prices cannot shrink to phone width without either
+ * overflowing the page or becoming unreadable, so it scrolls inside its own
+ * box while the article itself never scrolls sideways. `tabindex` keeps the
+ * scrollable region reachable from the keyboard.
+ */
+function withScrollableTables(html) {
+  return html.replace(
+    /<table>([\s\S]*?)<\/table>/g,
+    (_match, body) =>
+      `<div class="table-scroll" tabindex="0" role="region" aria-label="Table"><table>${body}</table></div>`,
+  );
 }
 
 /**
@@ -178,7 +296,7 @@ async function resolveChart(spec, articleDir, where) {
  *
  * Returns [{kind:"html", html}, {kind:"chart", chart}, ...]
  */
-async function toBlocks(markdown, articleDir, where) {
+async function toBlocks(markdown, articleDir, where, assetPrefix) {
   const fence = /^```chart[ \t]*\r?\n([\s\S]*?)\r?\n```[ \t]*$/gm;
   const charts = [];
 
@@ -199,7 +317,9 @@ async function toBlocks(markdown, articleDir, where) {
     entry.chart = await resolveChart(entry.spec, articleDir, where);
   }
 
-  const html = md.render(placeholdered);
+  const html = withScrollableTables(
+    withFigures(await withAssets(md.render(placeholdered), articleDir, assetPrefix, where)),
+  );
 
   const blocks = [];
   const marker = /<!--axis11:chart:(\d+)-->/g;
@@ -241,7 +361,7 @@ function plainSummary(blocks, fallback) {
   return text.slice(0, 180);
 }
 
-async function readVersion(articleDir, lang, where) {
+async function readVersion(articleDir, lang, where, assetPrefix) {
   const file = path.join(articleDir, `${lang}.md`);
   if (!existsSync(file)) return null;
 
@@ -254,7 +374,7 @@ async function readVersion(articleDir, lang, where) {
   }
   if (fm.draft === true) return null;
 
-  const blocks = await toBlocks(content, articleDir, `${where}/${lang}.md`);
+  const blocks = await toBlocks(content, articleDir, `${where}/${lang}.md`, assetPrefix);
 
   return {
     lang,
@@ -284,7 +404,7 @@ async function readArticle(categorySlug, articleSlug) {
 
   const versions = {};
   for (const lang of LANGUAGES) {
-    const version = await readVersion(articleDir, lang, where);
+    const version = await readVersion(articleDir, lang, where, `${categorySlug}--${articleSlug}`);
     if (version) versions[lang] = version;
   }
 
@@ -328,6 +448,10 @@ async function main() {
 
   const articles = [];
   const seen = new Set();
+
+  // Cleared before the articles are read, because reading them is what copies
+  // images in — clearing afterwards would delete the assets just written.
+  await rm(ASSET_DIR, { recursive: true, force: true });
 
   for (const categorySlug of await listDirs(CONTENT_DIR)) {
     if (!knownCategories.has(categorySlug)) {
