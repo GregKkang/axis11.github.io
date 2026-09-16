@@ -128,6 +128,11 @@ export default {
             h4: { fontFamily: "var(--font-heading)", fontWeight: "600" },
             a: { textDecorationThickness: "1px", textUnderlineOffset: "3px" },
             blockquote: { fontStyle: "normal", fontWeight: "400" },
+            // Block quotes are used here for author's notes and definitions,
+            // not for quotations, so the decorative quote marks Tailwind adds
+            // would misrepresent them as quoted material.
+            "blockquote p:first-of-type::before": { content: "none" },
+            "blockquote p:last-of-type::after": { content: "none" },
             "thead th": { fontWeight: "600" },
             "td, th": { paddingInlineStart: "0.75em", paddingInlineEnd: "0.75em" },
             // Footnote block rendered by markdown-it-footnote.
