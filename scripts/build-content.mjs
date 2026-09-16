@@ -103,10 +103,13 @@ async function resolveChart(spec, articleDir, where) {
     fail(where, "chart needs at least one entry in `series`");
     return null;
   }
-  if (spec.series.length > MAX_SERIES) {
+  // The aggregate is not one of the categories, so it neither consumes a
+  // palette slot nor counts against the limit.
+  const categorical = spec.series.filter((x) => x.role !== "total");
+  if (categorical.length > MAX_SERIES) {
     fail(
       where,
-      `chart has ${spec.series.length} series but the palette holds ${MAX_SERIES} — ` +
+      `chart has ${categorical.length} categorical series but the palette holds ${MAX_SERIES} — ` +
         "split it into two charts, or group the smaller series into a single \"Other\" line",
     );
     return null;
@@ -161,26 +164,35 @@ async function resolveChart(spec, articleDir, where) {
   // The tick list is computed here rather than in the browser because it is a
   // property of the data, not of the rendering.
   let xTicks = null;
+  let tickStyle = "month";
   if (spec.xType === "date") {
-    const seen = new Set();
-    xTicks = [];
-    for (const row of data) {
-      const month = String(row[spec.x]).slice(0, 7);
-      if (!seen.has(month)) {
-        seen.add(month);
-        xTicks.push(row[spec.x]);
+    const firstOfEach = (len) => {
+      const seen = new Set();
+      const out = [];
+      for (const row of data) {
+        const key = String(row[spec.x]).slice(0, len);
+        if (!seen.has(key)) {
+          seen.add(key);
+          out.push(row[spec.x]);
+        }
       }
-    }
-    if (xTicks.length > 14) {
-      // Roughly quarterly once a chart spans more than about a year.
-      const step = Math.ceil(xTicks.length / 12);
-      xTicks = xTicks.filter((_, i) => i % step === 0);
+      return out;
+    };
+    const months = firstOfEach(7);
+    if (months.length > 18) {
+      // Past about eighteen months a bare month name is ambiguous, so the axis
+      // switches to one tick per year labelled with the year itself.
+      tickStyle = "year";
+      xTicks = firstOfEach(4);
+    } else {
+      xTicks = months;
     }
   }
 
   return {
     xType: spec.xType === "date" ? "date" : "category",
     xTicks,
+    tickStyle,
     type: spec.type,
     title: spec.title ?? null,
     subtitle: spec.subtitle ?? null,
@@ -190,12 +202,21 @@ async function resolveChart(spec, articleDir, where) {
     yLabel: spec.yLabel ?? null,
     // "percent" appends %, "number" leaves values as-is.
     format: spec.format === "percent" ? "percent" : "number",
+    // A decomposition needs enough precision that the parts visibly sum to the
+    // whole; one decimal is right for most other charts.
+    decimals: Number.isInteger(spec.decimals) && spec.decimals >= 0 && spec.decimals <= 4 ? spec.decimals : 1,
     height: Number.isFinite(spec.height) ? spec.height : 320,
     stacked: spec.stacked === true,
     yZero: spec.yZero === true,
+    markers: Array.isArray(spec.markers)
+      ? spec.markers.map((m) => ({ x: String(m.x), label: m.label ?? null }))
+      : [],
     series: spec.series.map((s) => ({
       key: s.key,
       label: s.label ?? s.key,
+      // "total" marks a series that is the sum of the others; it is drawn as
+      // the aggregate rather than as another category.
+      role: s.role === "total" ? "total" : "category",
       // Optional explicit override; otherwise the component assigns from the palette.
       color: s.color ?? null,
     })),
