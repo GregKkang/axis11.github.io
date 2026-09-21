@@ -10,7 +10,10 @@ export type Category = {
   topics: string[];
 };
 
-export type Block = { kind: "html"; html: string } | { kind: "chart"; chart: ChartSpec };
+export type Block =
+  | { kind: "html"; html: string }
+  | { kind: "chart"; chart: ChartSpec }
+  | { kind: "diagram"; source: string };
 
 /** Metadata held in the index. The rendered body loads separately. */
 export type ArticleVersion = {

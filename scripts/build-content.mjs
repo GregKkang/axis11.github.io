@@ -319,9 +319,18 @@ function withScrollableTables(html) {
  */
 async function toBlocks(markdown, articleDir, where, assetPrefix) {
   const fence = /^```chart[ \t]*\r?\n([\s\S]*?)\r?\n```[ \t]*$/gm;
+  const diagramFence = /^```mermaid[ \t]*\r?\n([\s\S]*?)\r?\n```[ \t]*$/gm;
   const charts = [];
+  const diagrams = [];
 
-  const placeholdered = markdown.replace(fence, (_match, body) => {
+  // Diagrams are drawn in the browser by Mermaid, so the source travels as its
+  // own block rather than being rendered to an inert code listing.
+  const withDiagrams = markdown.replace(diagramFence, (_match, body) => {
+    diagrams.push(body.trim());
+    return `\n<!--axis11:diagram:${diagrams.length - 1}-->\n`;
+  });
+
+  const placeholdered = withDiagrams.replace(fence, (_match, body) => {
     let spec;
     try {
       spec = JSON.parse(body);
@@ -343,7 +352,7 @@ async function toBlocks(markdown, articleDir, where, assetPrefix) {
   );
 
   const blocks = [];
-  const marker = /<!--axis11:chart:(\d+)-->/g;
+  const marker = /<!--axis11:(chart|diagram):(\d+)-->/g;
   let cursor = 0;
   let match;
 
@@ -354,8 +363,13 @@ async function toBlocks(markdown, articleDir, where, assetPrefix) {
 
   while ((match = marker.exec(html)) !== null) {
     pushHtml(html.slice(cursor, match.index));
-    const chart = charts[Number(match[1])]?.chart;
-    if (chart) blocks.push({ kind: "chart", chart });
+    const index = Number(match[2]);
+    if (match[1] === "chart") {
+      const chart = charts[index]?.chart;
+      if (chart) blocks.push({ kind: "chart", chart });
+    } else if (diagrams[index]) {
+      blocks.push({ kind: "diagram", source: diagrams[index] });
+    }
     cursor = marker.lastIndex;
   }
   pushHtml(html.slice(cursor));
