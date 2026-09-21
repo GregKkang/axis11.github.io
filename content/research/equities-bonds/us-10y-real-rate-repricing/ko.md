@@ -186,6 +186,8 @@ Expected real short rate 상승을 단순히 “다음 FOMC에서 금리를 올�
 
 ---
 
+<section class="article-notes" aria-label="Data notes and sources">
+
 ### Data notes and sources
 
 - Federal Reserve Board, [Tips from TIPS: Update and Discussions](https://www.federalreserve.gov/econres/notes/feds-notes/tips-from-tips-update-and-discussions-20190521.html); DKW data through 31 August 2026.
@@ -193,3 +195,5 @@ Expected real short rate 상승을 단순히 “다음 FOMC에서 금리를 올�
 - Federal Reserve Bank of New York, [Treasury Term Premia — ACM](https://www.newyorkfed.org/research/data_indicators/term-premia-tabs).
 - Federal Reserve Bank of St. Louis, [10-Year Treasury yield](https://fred.stlouisfed.org/series/DGS10), [10-Year real interest rate](https://fred.stlouisfed.org/series/REAINTRATREARAT10Y), and [10-Year expected inflation](https://fred.stlouisfed.org/series/EXPINF10YR).
 - Charles Schwab, [Fed and Treasury Update: Higher-for-Longer Yields](https://www.schwab.com/learn/story/fed-and-treasury-update-higher-longer-yields), 12 August 2026; DKW-based interpretation of the 2026 year-to-date move.
+
+</section>

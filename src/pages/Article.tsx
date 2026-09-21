@@ -10,7 +10,6 @@ import {
   type Block,
   LANGUAGE_LABELS,
   articleUrl,
-  categoryUrl,
   findArticle,
   findCategory,
   formatDate,
@@ -56,7 +55,7 @@ const Article = () => {
         <header className="bg-navy pt-32 pb-16 md:pt-40 md:pb-20">
           <div className="container mx-auto max-w-3xl px-6">
             <a
-              href={categoryUrl(category.slug)}
+              href={`${import.meta.env.BASE_URL}?category=${category.slug}#research`}
               className="mb-10 inline-flex items-center gap-2 text-sm text-gold hover:text-gold-light"
             >
               <ArrowLeft className="h-4 w-4" />
@@ -129,7 +128,7 @@ const Article = () => {
           )}
 
           <a
-            href={categoryUrl(category.slug)}
+            href={`${import.meta.env.BASE_URL}?category=${category.slug}#research`}
             className="mt-10 inline-flex items-center gap-2 text-sm font-medium text-navy underline underline-offset-4"
           >
             <ArrowLeft className="h-4 w-4" />

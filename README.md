@@ -129,3 +129,21 @@ else.
 
 Set `SITE_URL` when moving to a custom domain — it feeds the canonical URLs,
 sitemap, and RSS feed.
+
+## Homepage article list and local sync
+
+The homepage lists all published articles, newest first, with area, tag and text filters.
+`tags` in an article's frontmatter are shown automatically; no manual list needs updating.
+Keep existing `content/research/<category>/<article>/` folders and URLs unchanged.
+Category pages and existing article links remain available.
+
+After web changes, select this repository and `main` in GitHub Desktop, click
+**Fetch origin**, then **Pull origin** when offered. This updates the existing local
+folder automatically. Commit or stash any local changes first if Desktop reports a conflict.
+
+### Source notes and chart captions
+
+Use `[^name]` and `[^name]:` for numbered footnotes. For an unnumbered source list,
+wrap the markdown in `<section class="article-notes">` and `</section>`, with blank
+lines after the opening tag and before the closing tag. An italic paragraph directly
+after a chart block is styled as a figure note, matching image captions.

@@ -214,3 +214,25 @@
     min-width: 30rem;
   }
 }
+
+/* Notes use a consistent visual hierarchy for images, charts and sources. */
+.prose-axis11 .article-notes {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  background: hsl(var(--secondary));
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: hsl(var(--muted-foreground));
+}
+.prose-axis11 .article-notes h3 { margin-top: 0; font-size: 1rem; }
+.prose-axis11 .article-notes a { color: inherit; }
+.prose-axis11 .figure-note {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: hsl(var(--muted-foreground));
+  margin-top: 0.75rem;
+  padding-left: 1rem;
+  border-left: 2px solid hsl(var(--border));
+}

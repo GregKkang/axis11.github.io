@@ -347,8 +347,13 @@ async function toBlocks(markdown, articleDir, where, assetPrefix) {
     entry.chart = await resolveChart(entry.spec, articleDir, where);
   }
 
+  const rendered = md.render(placeholdered).replace(
+    /(<!--axis11:chart:\d+-->)\s*<p><em>([\s\S]*?)<\/em><\/p>/g,
+    '$1\n<p class="figure-note">$2</p>',
+  );
+
   const html = withScrollableTables(
-    withFigures(await withAssets(md.render(placeholdered), articleDir, assetPrefix, where)),
+    withFigures(await withAssets(rendered, articleDir, assetPrefix, where)),
   );
 
   const blocks = [];
