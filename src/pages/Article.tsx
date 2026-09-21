@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ArticleChart from "@/components/ArticleChart";
+import ArticleDiagram from "@/components/ArticleDiagram";
 import NotFound from "./NotFound";
 import {
   type Block,
@@ -100,6 +101,8 @@ const Article = () => {
             blocks.map((block, index) =>
               block.kind === "chart" ? (
                 <ArticleChart key={index} spec={block.chart} lang={version.lang} />
+              ) : block.kind === "diagram" ? (
+                <ArticleDiagram key={index} source={block.source} />
               ) : (
                 <div
                   key={index}
