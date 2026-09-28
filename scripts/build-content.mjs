@@ -17,6 +17,7 @@ import matter from "gray-matter";
 import MarkdownIt from "markdown-it";
 import footnote from "markdown-it-footnote";
 import attrs from "markdown-it-attrs";
+import katexPlugin from "@vscode/markdown-it-katex";
 import { parse as parseCsv } from "csv-parse/sync";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -59,7 +60,10 @@ const md = new MarkdownIt({
   typographer: true,
 })
   .use(footnote)
-  .use(attrs);
+  .use(attrs)
+  // Maths is typeset here, at build time: the reader downloads KaTeX's small
+  // stylesheet and fonts, never its JavaScript. Write $inline$ and $$display$$.
+  .use(katexPlugin.default ?? katexPlugin, { throwOnError: true });
 
 // Open external links in a new tab without losing referrer safety.
 const defaultLinkOpen =
@@ -347,13 +351,8 @@ async function toBlocks(markdown, articleDir, where, assetPrefix) {
     entry.chart = await resolveChart(entry.spec, articleDir, where);
   }
 
-  const rendered = md.render(placeholdered).replace(
-    /(<!--axis11:chart:\d+-->)\s*<p><em>([\s\S]*?)<\/em><\/p>/g,
-    '$1\n<p class="figure-note">$2</p>',
-  );
-
   const html = withScrollableTables(
-    withFigures(await withAssets(rendered, articleDir, assetPrefix, where)),
+    withFigures(await withAssets(md.render(placeholdered), articleDir, assetPrefix, where)),
   );
 
   const blocks = [];
