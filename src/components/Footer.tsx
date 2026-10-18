@@ -8,11 +8,11 @@ const Footer = () => {
           <div className="flex items-center gap-3">
             <img src={logoIcon} alt="Axis11" className="h-6 w-6 brightness-0 invert opacity-60" />
             <span className="text-xs tracking-widest uppercase text-primary-foreground/40">
-              Axis11 Capital
+              Axis11 Research
             </span>
           </div>
           <p className="text-xs text-primary-foreground/30">
-            © {new Date().getFullYear()} Axis11 Capital. All rights reserved.
+            © {new Date().getFullYear()} Axis11 Research. All rights reserved.
           </p>
         </div>
         <p className="text-center text-xs text-primary-foreground/60 mt-6 max-w-3xl mx-auto leading-relaxed">

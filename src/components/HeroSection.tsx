@@ -1,48 +1,14 @@
-import logo from "@/assets/axis11-logo.png";
-import heroBg from "@/assets/hero-bg.jpg";
+import logoIcon from "@/assets/axis11-icon.png";
 
-const HeroSection = () => {
-  return (
-    <section className="relative min-h-[80vh] py-28 flex items-center justify-center overflow-hidden">
-      {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
-      <div className="absolute inset-0 bg-navy-dark/60" />
-
-      <div className="relative z-10 container mx-auto px-6 text-center">
-        <div className="animate-fade-in-up mb-8">
-          <div className="relative mx-auto h-40 w-64 overflow-hidden" aria-hidden="true">
-            <img src={logo} alt="" width={256} height={256} className="absolute left-0 top-0 w-64 max-w-none drop-shadow-2xl brightness-0 invert" />
-          </div>
-          <h1 className="mt-4 font-sans text-2xl md:text-3xl font-medium tracking-[0.12em] text-primary-foreground">AXIS11 RESEARCH</h1>
-        </div>
-
-        <p className="animate-fade-in-up-delay-1 max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed text-primary-foreground/80">
-          Systematic. Disciplined. Data-Driven.
-        </p>
-
-        <div className="animate-fade-in-up-delay-2 mt-3">
-          <p className="text-sm md:text-base tracking-widest uppercase text-gold font-medium">
-            Investment Research & Market Commentary
-          </p>
-        </div>
-
-        <div className="animate-fade-in-up-delay-2 mt-10">
-          <a
-            href="#research"
-            className="inline-flex items-center gap-2 border border-gold/50 text-gold px-8 py-3 text-sm tracking-widest uppercase hover:bg-gold/10 transition-all duration-300 rounded-sm"
-          >
-            Explore Research
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </a>
-        </div>
+const HeroSection = () => (
+  <header className="bg-navy-dark pt-28 pb-9 md:pt-28 md:pb-10 text-primary-foreground">
+    <div className="mx-auto max-w-6xl px-6 flex items-center gap-5 md:gap-7">
+      <img src={logoIcon} alt="" className="h-14 w-14 md:h-20 md:w-20 object-contain brightness-0 invert shrink-0" />
+      <div>
+        <h1 className="font-sans text-xl md:text-3xl font-medium tracking-[0.12em]">AXIS11 RESEARCH</h1>
+        <p className="mt-3 text-sm md:text-base text-primary-foreground/70">Independent research. A deeper perspective on markets.</p>
       </div>
-    </section>
-  );
-};
-
+    </div>
+  </header>
+);
 export default HeroSection;

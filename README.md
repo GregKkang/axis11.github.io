@@ -132,7 +132,7 @@ sitemap, and RSS feed.
 
 ## Homepage article list and local sync
 
-The homepage lists all published articles, newest first, with area, tag and text filters.
+The homepage lists all published articles, newest first, with an area filter and text search across titles, summaries and tags.
 `tags` in an article's frontmatter are shown automatically; no manual list needs updating.
 Keep existing `content/research/<category>/<article>/` folders and URLs unchanged.
 Category pages and existing article links remain available.
@@ -147,3 +147,7 @@ Use `[^name]` and `[^name]:` for numbered footnotes. For an unnumbered source li
 wrap the markdown in `<section class="article-notes">` and `</section>`, with blank
 lines after the opening tag and before the closing tag. An italic paragraph directly
 after a chart block is styled as a figure note, matching image captions.
+
+## Research-first navigation
+
+The homepage contains research only, with a compact masthead and the newest article highlighted on the unfiltered first page. The highlighted article counts toward the 10 articles per page. About (`about/`) combines the platform introduction and author experience; Contact is at `contact/`. The build emits static entry pages and sitemap entries for both routes. Old homepage About, Author and Contact anchors redirect to these pages.

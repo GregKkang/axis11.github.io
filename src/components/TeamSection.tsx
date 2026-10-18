@@ -6,7 +6,7 @@ const experience = [
 ];
 
 const TeamSection = () => (
-  <section id="author" className="bg-cream py-20 md:py-24">
+  <section id="author" className="bg-cream py-14 md:py-20 scroll-mt-20 border-t border-border">
     <div className="container mx-auto max-w-6xl px-6">
       <div className="grid gap-10 lg:grid-cols-[1fr_1.7fr] lg:gap-16">
         <div>

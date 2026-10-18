@@ -7,6 +7,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Research from "./pages/Research";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 // The article view pulls in the charting library, which is larger than the rest
 // of the site put together. Loading it on demand keeps the landing page light
@@ -29,6 +31,8 @@ const App = () => (
       <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/research/:category" element={<Research />} />
           <Route path="/research/:category/:slug" element={<ArticleRoute />} />
           <Route path="/research/:category/:slug/:lang" element={<ArticleRoute />} />

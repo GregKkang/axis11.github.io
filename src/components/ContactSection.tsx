@@ -2,13 +2,13 @@ import { Mail, MapPin } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-24 md:py-32 bg-navy-dark">
+    <section id="contact" className="py-16 md:py-20 bg-navy-dark">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-10">
           <p className="text-sm tracking-widest uppercase text-gold font-medium mb-3">Get in Touch</p>
-          <h2 className="font-heading text-3xl md:text-4xl font-semibold text-primary-foreground mb-6">
+          <h1 className="font-heading text-3xl md:text-4xl font-semibold text-primary-foreground mb-6">
             Get in Touch
-          </h2>
+          </h1>
           <p className="text-base md:text-lg leading-relaxed text-primary-foreground/60">
             Questions about a research topic, feedback on a market view, or an idea for future commentary?
             Get in touch with Greg by email.

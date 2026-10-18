@@ -29,13 +29,13 @@ const pillars = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 md:py-32 bg-cream">
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-14 md:py-20 bg-cream">
+      <div className="container mx-auto max-w-6xl px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-sm tracking-widest uppercase text-gold-muted font-medium mb-3">About Axis11</p>
-          <h2 className="font-heading text-3xl md:text-4xl font-semibold text-navy mb-6">
+          <h1 className="font-heading text-3xl md:text-4xl font-semibold text-navy mb-6">
             Research. Perspective. Discussion.
-          </h2>
+          </h1>
           <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
             Axis11 is a New Zealand-based platform for investment research and market commentary.
             It brings a quantitative perspective to global markets, sharing analysis and ideas
@@ -43,7 +43,7 @@ const AboutSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           {pillars.map((pillar) => (
             <div
               key={pillar.title}

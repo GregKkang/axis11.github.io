@@ -3,6 +3,11 @@ import { Menu, X } from "lucide-react";
 
 const home = import.meta.env.BASE_URL;
 const linkStyle = "text-sm font-medium tracking-wider uppercase text-primary-foreground/70 hover:text-gold focus-visible:text-gold transition-colors";
+const links = [
+  { label: "Research", href: home },
+  { label: "About", href: `${home}about/` },
+  { label: "Contact", href: `${home}contact/` },
+];
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -12,12 +17,12 @@ const Navbar = () => {
           <span className="font-sans text-xl font-semibold leading-none tracking-wide [font-variant-numeric:lining-nums]">AXIS11</span>
         </a>
         <div className="hidden md:flex items-center gap-8">
-          {['Research', 'About', 'Author', 'Contact'].map(label => <a key={label} href={`${home}#${label.toLowerCase()}`} className={linkStyle}>{label}</a>)}
+          {links.map(({ label, href }) => <a key={label} href={href} aria-current={window.location.pathname.replace(/\/$/, "") === href.replace(/\/$/, "") ? "page" : undefined} className={`${linkStyle} aria-[current=page]:text-gold`}>{label}</a>)}
         </div>
         <button type="button" onClick={() => setOpen(!open)} className="md:hidden text-primary-foreground p-2" aria-label="Toggle menu" aria-expanded={open} aria-controls="mobile-navigation">{open ? <X /> : <Menu />}</button>
       </div>
       {open && <div id="mobile-navigation" className="md:hidden max-h-[80vh] overflow-y-auto bg-navy-dark border-t border-navy-light/20 px-6 py-4 space-y-4">
-        {['Research', 'About', 'Author', 'Contact'].map(label => <a key={label} href={`${home}#${label.toLowerCase()}`} className={`block ${linkStyle}`} onClick={() => setOpen(false)}>{label}</a>)}
+        {links.map(({ label, href }) => <a key={label} href={href} className={`block ${linkStyle}`} onClick={() => setOpen(false)}>{label}</a>)}
       </div>}
     </nav>
   );
