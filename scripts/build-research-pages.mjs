@@ -76,6 +76,7 @@ const urls = [{ loc: SITE_URL, changefreq: "monthly", priority: "1.0" }];
 
 // Standalone information pages, including direct-load URLs on GitHub Pages.
 for (const page of [
+  { slug: "market-pulse", title: "Market Pulse | Axis11 Research", description: "AI-generated indicators that put daily market moves in context." },
   { slug: "about", title: "About | Axis11 Research", description: "The research approach behind Axis11 and Greg Kang’s investment research and portfolio management experience." },
   { slug: "contact", title: "Contact | Axis11 Research", description: "Contact Greg Kang at Axis11 Research in New Zealand." },
 ]) {
@@ -181,5 +182,5 @@ if (!robots.includes("Sitemap:")) {
   await writeFile(robotsPath, `${robots.trimEnd()}\n\nSitemap: ${absolute("sitemap.xml")}\n`, "utf8");
 }
 
-const pageCount = 2 + categories.length + articles.reduce((n, a) => n + a.languages.length, 0);
+const pageCount = 3 + categories.length + articles.reduce((n, a) => n + a.languages.length, 0);
 console.log(`✓ Static pages: ${pageCount} (${categories.length} categories, ${articles.length} articles) + sitemap + RSS`);

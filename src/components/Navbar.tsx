@@ -5,6 +5,7 @@ const home = import.meta.env.BASE_URL;
 const linkStyle = "text-sm font-medium tracking-wider uppercase text-primary-foreground/70 hover:text-gold focus-visible:text-gold transition-colors";
 const links = [
   { label: "Research", href: home },
+  { label: "Market Pulse", href: `${home}market-pulse/` },
   { label: "About", href: `${home}about/` },
   { label: "Contact", href: `${home}contact/` },
 ];

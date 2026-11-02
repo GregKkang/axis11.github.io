@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound.tsx";
 import Research from "./pages/Research";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import MarketPulse from "./pages/MarketPulse";
 
 // The article view pulls in the charting library, which is larger than the rest
 // of the site put together. Loading it on demand keeps the landing page light
@@ -31,6 +32,7 @@ const App = () => (
       <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/market-pulse" element={<MarketPulse />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/research/:category" element={<Research />} />

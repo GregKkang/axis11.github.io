@@ -8,7 +8,7 @@ afterEach(cleanup);
 it('keeps the home page focused on research and links to separate information pages', () => {
   render(<Index />);
   const nav = within(screen.getByRole('navigation', { name: 'Main navigation' }));
-  expect(nav.getAllByRole('link').map(a => a.textContent)).toEqual(['AXIS11', 'Research', 'About', 'Contact']);
+  expect(nav.getAllByRole('link').map(a => a.textContent)).toEqual(['AXIS11', 'Research', 'Market Pulse', 'About', 'Contact']);
   expect(nav.getByRole('link', { name: 'About' })).toHaveAttribute('href', `${import.meta.env.BASE_URL}about/`);
   expect(nav.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', `${import.meta.env.BASE_URL}contact/`);
   expect(screen.queryByRole('heading', { name: 'Greg Kang' })).not.toBeInTheDocument();
@@ -22,7 +22,7 @@ it('keeps the home page focused on research and links to separate information pa
   expect(screen.getByRole('list').children).toHaveLength(Math.min(10, allArticles.length - 10));
   }
   fireEvent.click(nav.getByRole('button', { name: 'Toggle menu' }));
-  expect(document.getElementById('mobile-navigation')?.textContent).toBe('ResearchAboutContact');
+  expect(document.getElementById('mobile-navigation')?.textContent).toBe('ResearchMarket PulseAboutContact');
 });
 it('combines research approach and author on About', () => {
   render(<About />);
