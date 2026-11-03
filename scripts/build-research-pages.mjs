@@ -24,6 +24,7 @@ const SITE_DESCRIPTION =
 
 const categories = JSON.parse(await readFile(path.join(ROOT, "src", "data", "research.json"), "utf8"));
 const articles = JSON.parse(await readFile(path.join(ROOT, "src", "data", "articles.json"), "utf8"));
+const pulsePosts = JSON.parse(await readFile(path.join(ROOT, "src", "data", "market-pulse.json"), "utf8"));
 const shell = await readFile(path.join(DIST, "index.html"), "utf8");
 
 const escapeHtml = (value) =>
@@ -134,6 +135,16 @@ for (const article of articles) {
     urls.push({ loc: canonical, changefreq: "monthly", priority: isPrimary ? "0.7" : "0.5" });
   }
 }
+
+// Date-specific Market Pulse pages must also work on direct entry and reload.
+for (const post of pulsePosts) {
+  const relative = `market-pulse/${post.date}`;
+  const canonical = absolute(`${relative}/`);
+  await writePage(relative, renderShell({ title: `${post.date} · ${post.title} | Axis11 Market Pulse`, description: post.summary, canonical, type: "article", published: post.publishedAt }));
+  urls.push({ loc: canonical, changefreq: "monthly", priority: "0.7" });
+}
+await writePage("market-pulse/method", renderShell({ title: "Model and source notes | Axis11 Market Pulse", description: "How the news model, market data and historical error bands are constructed.", canonical: absolute("market-pulse/method/") }));
+urls.push({ loc: absolute("market-pulse/method/"), changefreq: "monthly", priority: "0.5" });
 
 // sitemap.xml
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

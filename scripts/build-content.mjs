@@ -555,3 +555,4 @@ async function main() {
 }
 
 await main();
+await import("./build-market-pulse.mjs");

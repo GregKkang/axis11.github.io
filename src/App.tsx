@@ -15,6 +15,7 @@ import MarketPulse from "./pages/MarketPulse";
 // of the site put together. Loading it on demand keeps the landing page light
 // for the majority of visitors who never open an article.
 const Article = lazy(() => import("./pages/Article"));
+const MarketPulseArticle = lazy(() => import("./pages/MarketPulseArticle"));
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/market-pulse" element={<MarketPulse />} />
+          <Route path="/market-pulse/:date" element={<Suspense fallback={<div className="min-h-screen bg-cream" aria-busy="true" />}><MarketPulseArticle /></Suspense>} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/research/:category" element={<Research />} />

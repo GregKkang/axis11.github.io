@@ -27,3 +27,7 @@ dist-ssr
 src/data/articles.json
 src/data/articles/
 public/research-assets/
+
+# Generated Market Pulse metadata and rendered bodies
+src/data/market-pulse.json
+src/data/market-pulse/
