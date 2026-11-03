@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="720" viewBox="0 0 1600 720" role="img" aria-labelledby="title desc">
+<title id="title">From news to an estimated market return</title>
+<desc id="desc">Generative AI extracts events and context from a CNBC article; an embedding model converts them into 384 numbers. A Ridge regression trained on past news vectors and returns produces an estimated return. The actual return for the day is never fed into the news input; it is compared with the estimated return.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#496579"/></marker></defs>
+<rect width="1600" height="720" fill="#f7f9fb"/>
+<g font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif" fill="#182e40">
+<text x="60" y="65" font-size="23" font-weight="700" fill="#276d80">AXIS11 RESEARCH</text>
+<text x="60" y="123" font-size="38" font-weight="700">From news to an estimated market return</text>
+<text x="60" y="166" font-size="23" fill="#536b7c">Generative AI extracts the meaning; the statistical model applies past relationships</text>
+<g fill="none" stroke="#496579" stroke-width="3" marker-end="url(#arrow)">
+<path d="M300 310H346"/><path d="M610 310H656"/><path d="M920 310H966"/><path d="M1230 310H1268"/>
+<path d="M1100 500V415" stroke-dasharray="8 7"/><path d="M1410 500V415"/>
+</g>
+<g stroke="#cbd8e1" stroke-width="2">
+<rect x="40" y="210" width="260" height="200" rx="14" fill="#fff"/>
+<rect x="350" y="210" width="260" height="200" rx="14" fill="#e7f2f3"/>
+<rect x="660" y="210" width="260" height="200" rx="14" fill="#fff"/>
+<rect x="970" y="210" width="260" height="200" rx="14" fill="#e7f2f3"/>
+<rect x="1272" y="210" width="296" height="200" rx="14" fill="#182e40" stroke="#182e40"/>
+<rect x="910" y="500" width="340" height="115" rx="14" fill="#fff"/>
+<rect x="1272" y="500" width="296" height="115" rx="14" fill="#fff"/>
+</g>
+<g text-anchor="middle">
+<text x="170" y="256" font-size="27" font-weight="700">CNBC article</text>
+<text x="170" y="298" font-size="22">Daily market close</text>
+<text x="170" y="326" font-size="22">summary</text>
+<text x="170" y="375" font-size="20" fill="#536b7c">The whole article is read</text>
+<text x="480" y="256" font-size="27" font-weight="700">Generative AI</text>
+<text x="480" y="298" font-size="22">Extracts events</text>
+<text x="480" y="326" font-size="22">and context</text>
+<text x="480" y="362" font-size="20" fill="#536b7c">Price and move</text>
+<text x="480" y="388" font-size="20" fill="#536b7c">language removed</text>
+<text x="790" y="256" font-size="27" font-weight="700">Text embedding</text>
+<text x="790" y="298" font-size="22">Statements to a</text>
+<text x="790" y="326" font-size="22">numeric vector</text>
+<text x="790" y="362" font-size="20" fill="#536b7c">One day as</text>
+<text x="790" y="388" font-size="20" fill="#536b7c">384 coordinates</text>
+<text x="1100" y="256" font-size="27" font-weight="700">Ridge regression</text>
+<text x="1100" y="298" font-size="22">Computes the</text>
+<text x="1100" y="326" font-size="22">estimated return</text>
+<text x="1100" y="362" font-size="20" fill="#536b7c">Applies the learned</text>
+<text x="1100" y="388" font-size="20" fill="#536b7c">relationship</text>
+<text x="1420" y="256" font-size="27" font-weight="700" fill="#fff">Compare with actual</text>
+<text x="1420" y="298" font-size="22" fill="#fff">Actual return −</text>
+<text x="1420" y="326" font-size="22" fill="#fff">estimated return</text>
+<text x="1420" y="375" font-size="20" fill="#cce0e8">Examine the difference</text>
+<text x="1080" y="536" font-size="22" font-weight="700">Past news vectors + returns</text>
+<text x="1080" y="570" font-size="20" fill="#536b7c">750 days, 2023–2025,</text>
+<text x="1080" y="596" font-size="20" fill="#536b7c">for training</text>
+<text x="1420" y="536" font-size="22" font-weight="700">Actual return for the day</text>
+<text x="1420" y="570" font-size="20" fill="#536b7c">Held separately</text>
+<text x="1420" y="596" font-size="20" fill="#536b7c">for comparison</text>
+</g>
+<text x="60" y="651" font-size="22" fill="#536b7c">The actual return for the day is never fed into the news vector. The source article does contain the market outcome.</text>
+<text x="60" y="689" font-size="22" fill="#536b7c">The estimated return is a benchmark built from past relationships, not a fair return or a causal effect of any single event.</text>
+</g></svg>

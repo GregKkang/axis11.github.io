@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="720" viewBox="0 0 1600 720" role="img" aria-labelledby="title desc">
+<title id="title">뉴스에서 시장 설명값까지</title>
+<desc id="desc">CNBC 기사에서 생성형 AI가 사건과 배경을 추출하고, 임베딩이 384차원 숫자로 변환한다. 과거 뉴스 벡터와 수익률로 학습한 Ridge가 설명값을 계산한다. 분석 대상일의 실제 수익률은 뉴스 입력에 넣지 않고 설명값과 비교한다.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#496579"/></marker></defs>
+<rect width="1600" height="720" fill="#f7f9fb"/>
+<g font-family="Malgun Gothic, Noto Sans KR, sans-serif" fill="#182e40">
+<text x="60" y="65" font-size="23" font-weight="700" fill="#276d80">AXIS11 RESEARCH</text>
+<text x="60" y="123" font-size="38" font-weight="700">뉴스에서 시장 설명값까지</text>
+<text x="60" y="166" font-size="23" fill="#536b7c">생성형 AI는 의미를 추출하고, 수치 모델은 과거 관계를 적용한다</text>
+<g fill="none" stroke="#496579" stroke-width="3" marker-end="url(#arrow)">
+<path d="M300 295H346"/><path d="M610 295H656"/><path d="M920 295H966"/><path d="M1230 295H1276"/>
+<path d="M1100 490V390" stroke-dasharray="8 7"/><path d="M1410 490V390"/>
+</g>
+<g stroke="#cbd8e1" stroke-width="2">
+<rect x="40" y="220" width="260" height="165" rx="14" fill="#fff"/>
+<rect x="350" y="220" width="260" height="165" rx="14" fill="#e7f2f3"/>
+<rect x="660" y="220" width="260" height="165" rx="14" fill="#fff"/>
+<rect x="970" y="220" width="260" height="165" rx="14" fill="#e7f2f3"/>
+<rect x="1280" y="220" width="280" height="165" rx="14" fill="#182e40" stroke="#182e40"/>
+<rect x="950" y="500" width="300" height="100" rx="14" fill="#fff"/>
+<rect x="1280" y="500" width="280" height="100" rx="14" fill="#fff"/>
+</g>
+<g text-anchor="middle">
+<text x="170" y="268" font-size="27" font-weight="700">CNBC 기사</text>
+<text x="170" y="312" font-size="22">당일 시장 마감 요약</text>
+<text x="170" y="348" font-size="20" fill="#536b7c">기사 전체를 읽는다</text>
+<text x="480" y="268" font-size="27" font-weight="700">생성형 AI</text>
+<text x="480" y="312" font-size="22">주요 사건·배경 추출</text>
+<text x="480" y="348" font-size="20" fill="#536b7c">가격·등락 표현 제외</text>
+<text x="790" y="268" font-size="27" font-weight="700">텍스트 임베딩</text>
+<text x="790" y="312" font-size="22">설명문 → 숫자 벡터</text>
+<text x="790" y="348" font-size="20" fill="#536b7c">하루를 384개 좌표로</text>
+<text x="1100" y="268" font-size="27" font-weight="700">Ridge 회귀</text>
+<text x="1100" y="312" font-size="22">당일 설명값 계산</text>
+<text x="1100" y="348" font-size="20" fill="#536b7c">학습한 관계를 적용</text>
+<text x="1420" y="268" font-size="27" font-weight="700" fill="#fff">실제와 비교</text>
+<text x="1420" y="312" font-size="22" fill="#fff">실제 수익률 − 설명값</text>
+<text x="1420" y="348" font-size="20" fill="#cce0e8">차이를 검토한다</text>
+<text x="1100" y="539" font-size="22" font-weight="700">과거 뉴스 벡터 + 수익률</text>
+<text x="1100" y="575" font-size="20" fill="#536b7c">2023~2025년 750일 학습</text>
+<text x="1420" y="539" font-size="22" font-weight="700">분석 대상일 실제 수익률</text>
+<text x="1420" y="575" font-size="20" fill="#536b7c">별도 자료로 비교</text>
+</g>
+<text x="60" y="651" font-size="22" fill="#536b7c">분석 대상일의 실제 수익률은 뉴스 벡터 입력에 넣지 않는다. 원문 기사에는 시장 결과가 포함돼 있다.</text>
+<text x="60" y="689" font-size="22" fill="#536b7c">모델 설명값은 과거 관계를 적용한 비교 기준이며, 적정 수익률이나 사건별 인과효과를 뜻하지 않는다.</text>
+</g></svg>
