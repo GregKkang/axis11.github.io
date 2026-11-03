@@ -1,0 +1,85 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Anthropic’s IPO filing rekindles interest in AI | AXIS11 Research</title><style>body{margin:0;background:#f8f7f2;color:#17243a;font:17px/1.7 Arial}header{background:#101e39;color:white;padding:40px}main{max-width:850px;margin:auto;padding:30px 24px}a{color:inherit}h1,h2{font-family:Georgia;line-height:1.3}article{padding:24px;background:white;margin:24px 0;border:1px solid #ddd}table{border-collapse:collapse;width:100%;font-size:15px}td,th{padding:12px;border-bottom:1px solid #ddd}.table-scroll{overflow:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eee;padding:18px;font-size:14px}footer{padding:24px;text-align:center;font-size:13px}</style></head><body><header><a href="../">AXIS11 Research · Market Pulse</a><h1>Anthropic’s IPO filing rekindles interest in AI</h1></header><main><p>U.S. trading session: 2026-10-26 · Published 2026-11-03</p><p>Generative news extraction · Local embeddings · Ridge alpha=1 · U.S. trading session</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Market data table"><table>
+<thead>
+<tr>
+<th>Index</th>
+<th style="text-align:right">Close</th>
+<th style="text-align:right">Daily change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S&amp;P 500</td>
+<td style="text-align:right">7,676.77</td>
+<td style="text-align:right">+0.70%</td>
+</tr>
+<tr>
+<td>Dow Jones Industrial Average</td>
+<td style="text-align:right">52,361.58</td>
+<td style="text-align:right">+0.28%</td>
+</tr>
+<tr>
+<td>Nasdaq Composite</td>
+<td style="text-align:right">26,169.38</td>
+<td style="text-align:right">+0.82%</td>
+</tr>
+</tbody>
+</table></div>
+<h2>How the market response compared with historical patterns</h2>
+<p>The S&amp;P 500 returned <strong>+0.70%</strong>, against a model estimate of <strong>-0.05%</strong>. The actual return was <strong>0.75 percentage points above</strong> the estimate based on historical news relationships.</p>
+<p>The input included Anthropic’s IPO filing and revenue disclosure, Meta and SpaceX financing plans, neocloud business risks, and the approaching earnings and Fed calendar. The actual rally was stronger than this combination of news implied in the model’s historical sample. The model’s slight negative estimate did not capture the direction of the rally.</p>
+<p>Absolute gaps at least this large occurred on <strong>28.9% of the preceding 204 evaluation days</strong>.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Market data table"><table>
+<thead>
+<tr>
+<th>Measure</th>
+<th style="text-align:right">Daily simple return</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Actual</td>
+<td style="text-align:right">+0.70%</td>
+</tr>
+<tr>
+<td>Model estimate</td>
+<td style="text-align:right">-0.05%</td>
+</tr>
+<tr>
+<td>Actual minus model</td>
+<td style="text-align:right">+0.75 pp</td>
+</tr>
+<tr>
+<td>Historical 80% error band</td>
+<td style="text-align:right">-1.02% to +0.93%</td>
+</tr>
+<tr>
+<td>Historical 95% error band</td>
+<td style="text-align:right">-1.76% to +1.69%</td>
+</tr>
+</tbody>
+</table></div>
+<h2>CNBC recap and supporting context</h2>
+<p>AI-related shares helped lift all three major U.S. indexes after Anthropic publicly filed for an IPO. Nvidia, Micron, Broadcom and AMD participated in the advance as investors reassessed the sector’s growth prospects.</p>
+<p>The filing also disclosed a sharp increase in Anthropic’s revenue. Other financing headlines added to the focus on AI investment: Meta said it planned to raise $95 billion, while Elon Musk said SpaceX had completed a $40 billion debt deal for AI chips.</p>
+<p>These announcements improved the tone, but did not settle questions about the sustainability or eventual returns of the investment boom. Investors were also approaching a busy earnings week and Wednesday’s Fed decision. CNBC reported that an unchanged policy-rate range was widely expected.</p>
+<p><a href="https://www.cnbc.com/2026/10/25/stock-market-today-live-updates.html" target="_blank" rel="noopener noreferrer">CNBC closing recap</a></p>
+<p>Closing levels: CNBC; independently cross-checked against FRED for S&amp;P 500, Dow, Nasdaq. Company moves and reported market explanations are attributed to CNBC.</p>
+<h2>Text used by the model</h2>
+<p>The original Claude summaries and documented source-based edits were retained unchanged. Category tags, timing tags and the separate numeric-surprise field were not fed into the embedding model.</p>
+<pre><code class="language-text">Anthropic publicly filed for an IPO, reporting $16.29 billion in revenue for the six months ended June, up 1,304% from $1.16 billion a year earlier, and plans to list on the Nasdaq under the ticker ANT.
+Meta Platforms said Monday it plans to raise $95 billion to support its AI investments.
+Elon Musk said over the weekend that SpaceX closed a $40 billion debt deal for AI chips.
+Elon Musk said more than 200 neocloud companies face guppy-level death.
+On Friday, news reports said the U.S. and Israel could be planning to launch strikes on Iran after the midterm elections.
+This is peak earnings week with 163 S&amp;P 500 companies reporting, including Alphabet, Amazon and Microsoft after Meta's unnerving release, and the Fed announces its decision Wednesday with rates at a 3.75% to 4% target range.
+Freedom Capital's Jay Woods called the Anthropic filing a big confidence booster and anticipates strong demand for the long-awaited offering.
+</code></pre>
+<h2>Calculation</h2>
+<pre><code class="language-text">Intercept b = -0.0006704786
+Weighted embedding sum w·x = +0.0001569875
+Estimated log return b+w·x = -0.0005134910
+100 × (exp(b+w·x) − 1) = -0.051336%
+</code></pre>
+<p>The model was trained on 750 sessions from 2023–2025, with alpha fixed at 1 and unchanged local BAAI/bge-small-en-v1.5 weights. Error bands use absolute log-return errors from 204 evaluation days before October 26; all six sessions in this briefing window are excluded. These are historical error reference bands, not fair-value ranges or guaranteed coverage intervals. The gap does not identify an individual event’s causal contribution or establish market overreaction or underreaction. <a href="../method/">Method and source notes</a></p>
+</main><footer>AXIS11 Research · Research and commentary for general information.</footer></body></html>
