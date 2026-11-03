@@ -7,7 +7,7 @@ on:
     branches: [main]
   workflow_dispatch:
   workflow_run:
-    workflows: [Build Market Pulse overlay]
+    workflows: [Market Pulse content ready]
     types: [completed]
     branches: [gh-pages]
 
