@@ -1,4 +1,4 @@
-name: Build and deploy website
+name: Build Market Pulse overlay
 
 on:
   push:
@@ -6,10 +6,6 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
-  workflow_run:
-    workflows: [Build and deploy website]
-    types: [completed]
-    branches: [gh-pages]
 
 permissions:
   contents: read
