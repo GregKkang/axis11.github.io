@@ -2,7 +2,7 @@ name: Build and deploy website
 
 on:
   push:
-    branches: [main]
+    branches: [main, gh-pages]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -10,11 +10,19 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: website-${{ github.event_name == 'pull_request' && github.ref || 'production' }}
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out website source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.sha || 'main' }}
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -25,20 +33,30 @@ jobs:
         run: npm run build
       - name: Include the application error page
         run: cp dist/index.html dist/404.html
+      - name: Check out published Market Pulse
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: .market-pulse-overlay
+          sparse-checkout: market-pulse
+          persist-credentials: false
+      - name: Overlay Market Pulse without changing other pages
+        run: |
+          test -f .market-pulse-overlay/market-pulse/index.html
+          mkdir -p dist/market-pulse
+          cp -a .market-pulse-overlay/market-pulse/. dist/market-pulse/
+          cmp .market-pulse-overlay/market-pulse/index.html dist/market-pulse/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
   deploy:
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/gh-pages')
     needs: build
     runs-on: ubuntu-latest
     permissions:
       pages: write
       id-token: write
-    concurrency:
-      group: github-pages
-      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
