@@ -7,8 +7,14 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# The deploy step pushes the built site to the gh-pages branch, so the workflow
+# needs write access to the repository rather than the Pages artifact service.
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -25,25 +31,19 @@ jobs:
         run: npm run build
       - name: Include the application error page
         run: cp dist/index.html dist/404.html
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
 
-  deploy:
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    concurrency:
-      group: github-pages
-      cancel-in-progress: false
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - uses: actions/configure-pages@v5
-      - name: Deploy website
-        id: deployment
-        uses: actions/deploy-pages@v4
+      # The site is published into the gh-pages branch rather than uploaded as a
+      # replace-everything Pages artifact. `keep_files` leaves anything already on
+      # that branch in place, so pages published outside this build — Market Pulse
+      # under /market-pulse/ — survive every site deploy.
+      - name: Publish the site to the gh-pages branch
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          keep_files: true
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
+          commit_message: "Deploy the site from ${{ github.sha }}"

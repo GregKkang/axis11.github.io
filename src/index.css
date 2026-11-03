@@ -228,4 +228,27 @@
     overflow-y: hidden;
     padding-block: 0.375rem;
   }
+
+  /*
+   * A vector diagram scaled down to phone width leaves its labels too small to
+   * read, so it keeps a legible width and scrolls inside its own figure. Raster
+   * charts are deliberately left alone: scrolling a photograph of a chart
+   * recovers no detail, and they already link to the full-resolution file.
+   */
+  @media (max-width: 640px) {
+    .prose-axis11 figure:has(img[src$=".svg"]) {
+      overflow-x: auto;
+    }
+
+    .prose-axis11 figure:has(img[src$=".svg"]) img {
+      width: 560px;
+      min-width: 560px;
+      max-width: none;
+    }
+
+    .prose-axis11 figure:has(img[src$=".svg"]) figcaption {
+      position: sticky;
+      left: 0;
+    }
+  }
 }
