@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ResearchLibrary from "@/components/ResearchLibrary";
 import Footer from "@/components/Footer";
+import ResearchSubscribe from "@/components/ResearchSubscribe";
 
 const Index = () => {
   useEffect(() => {
@@ -21,6 +22,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <ResearchLibrary />
+        <ResearchSubscribe />
       </main>
       <Footer />
     </div>
