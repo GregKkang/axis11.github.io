@@ -22,8 +22,8 @@ const ContactSection = () => {
             </div>
             <div>
               <p className="text-xs tracking-widest uppercase text-primary-foreground/50 mb-1">Email</p>
-              <a href="mailto:greg.kkang@gmail.com" className="text-primary-foreground hover:text-gold transition-colors">
-                greg.kkang@gmail.com
+              <a href="mailto:research@axis11research.com" className="text-primary-foreground hover:text-gold transition-colors">
+                research@axis11research.com
               </a>
             </div>
           </div>
@@ -41,10 +41,10 @@ const ContactSection = () => {
 
         <div className="text-center mt-12">
           <a
-            href="mailto:greg.kkang@gmail.com"
+            href="mailto:research@axis11research.com"
             className="inline-block bg-gold text-accent-foreground px-10 py-3 text-sm font-semibold tracking-wider uppercase rounded-sm hover:bg-gold-light transition-colors duration-300"
           >
-            Email Greg
+            Email AXIS11
           </a>
         </div>
       </div>
