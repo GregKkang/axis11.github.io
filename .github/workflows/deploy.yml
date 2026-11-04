@@ -51,6 +51,8 @@ jobs:
           mkdir -p dist/market-pulse
           cp -a .market-pulse-overlay/market-pulse/. dist/market-pulse/
           cmp .market-pulse-overlay/market-pulse/index.html dist/market-pulse/index.html
+      - name: Apply Market Pulse site layout
+        run: node scripts/style-market-pulse-overlay.mjs
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
