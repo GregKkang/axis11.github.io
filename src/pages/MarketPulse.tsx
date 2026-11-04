@@ -9,8 +9,8 @@ const MarketPulse = () => {
   return (
     <div className="min-h-screen flex flex-col bg-cream">
       <Navbar />
-      <main className="flex-1 pt-16">
-        <header className="bg-navy-dark text-primary-foreground py-14 md:py-20">
+      <main className="flex-1">
+        <header className="bg-navy-dark text-primary-foreground pt-[7.5rem] pb-14 md:pt-36 md:pb-20">
           <div className="mx-auto max-w-6xl px-6">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-gold">AXIS11 · Daily market analysis</p>
             <h1 className="font-heading text-4xl md:text-6xl">Market Pulse</h1>
