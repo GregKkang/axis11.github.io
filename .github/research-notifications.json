@@ -1,0 +1,29 @@
+{
+  "mode": "dry-run",
+  "sender": {
+    "name": "AXIS11 Research",
+    "email": "greg@axis11research.com"
+  },
+  "segmentIds": {
+    "en": 1,
+    "ko": 2
+  },
+  "baselineCommit": "2077d119d2856058f31a2bd71d55aee567296b22",
+  "excludedArticleIds": [
+    "commodities/abundant-oil-scarce-supply",
+    "commodities/grain-inflation-risk",
+    "commodities/spr-release-announced-vs-delivered",
+    "equities-bonds/ai-capex-credit-channels",
+    "equities-bonds/ai-capex-sp500-earnings",
+    "equities-bonds/dealer-gamma",
+    "equities-bonds/kpi-binary-options",
+    "equities-bonds/llm-option-factors",
+    "equities-bonds/ml-us-10y-yield-forecast",
+    "equities-bonds/news-explains-markets",
+    "equities-bonds/tips-real-yields-inflation",
+    "equities-bonds/treasury-basis-unwind",
+    "equities-bonds/us-10y-real-rate-repricing",
+    "global-macro/writing-for-axis11-research",
+    "technology/memory-cycle-inflection"
+  ]
+}

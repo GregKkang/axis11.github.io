@@ -26,7 +26,7 @@ jobs:
       - name: Check out website source
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event_name == 'pull_request' && github.sha || 'main' }}
+          ref: ${{ (github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/main')) && github.sha || 'main' }}
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
@@ -36,6 +36,16 @@ jobs:
         run: npm ci
       - name: Build website
         run: npm run build
+      - name: Package notification preview inputs
+        run: |
+          mkdir -p .notification-inputs
+          cp src/data/articles.json scripts/research-notifications.mjs .github/research-notifications.json .notification-inputs/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: research-notification-inputs
+          path: .notification-inputs/
+          include-hidden-files: true
+          retention-days: 7
       - name: Include the application error page
         run: cp dist/index.html dist/404.html
       - name: Check out published Market Pulse
@@ -64,6 +74,8 @@ jobs:
     permissions:
       pages: write
       id-token: write
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -72,3 +84,28 @@ jobs:
       - name: Deploy website
         id: deployment
         uses: actions/deploy-pages@v4
+
+  notification-preview:
+    name: Research notification preview (no sending)
+    needs: [build, deploy]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/download-artifact@v4
+        with:
+          name: research-notification-inputs
+          path: notification-inputs
+      - name: Preview notifications for the deployed content
+        env:
+          DEPLOYED_SITE_URL: ${{ needs.deploy.outputs.page_url }}
+        run: node notification-inputs/research-notifications.mjs notification-inputs/articles.json notification-inputs/research-notifications.json "$DEPLOYED_SITE_URL" notification-preview
+      - uses: actions/upload-artifact@v4
+        with:
+          name: research-notification-preview
+          path: notification-preview/
+          retention-days: 14
