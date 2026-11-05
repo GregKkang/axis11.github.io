@@ -47,3 +47,18 @@ test('email uses full first body paragraph instead of the short site summary', (
   assert.equal(en.previewText, intro);
   assert.ok(ko.htmlContent.includes(a.versions.ko.emailIntro));
 });
+
+test('renders four distinct paragraphs and visible article and unsubscribe links', () => {
+  const a = article();
+  for (const lang of ['en','ko']) a.versions[lang].emailParagraphs = ['First & full', 'Second', 'Third', 'Fourth', 'Fifth'];
+  const campaigns = planNotifications([a], config, 'https://example.com/').plans[0].campaigns;
+  for (const c of campaigns) {
+    assert.ok(c.htmlContent.includes('First &amp; full'));
+    for (const text of ['Second','Third','Fourth']) assert.ok(c.htmlContent.includes('>' + text + '</p>'));
+    assert.ok(!c.htmlContent.includes('Fifth'));
+    assert.ok(c.htmlContent.includes('href="' + c.link + '"'));
+    assert.ok(c.htmlContent.includes('href="{{ unsubscribe }}"'));
+    assert.ok(c.htmlContent.indexOf('href="{{ unsubscribe }}"') < c.htmlContent.indexOf('First &amp; full'));
+    assert.ok(c.htmlContent.lastIndexOf('href="' + c.link + '"') > c.htmlContent.indexOf('Fourth'));
+  }
+});

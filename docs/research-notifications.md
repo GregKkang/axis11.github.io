@@ -60,3 +60,7 @@ Coverage includes historical bootstrap, EN/KO grouping and segments, split langu
 ## Email opening paragraph
 
 The content builder adds emailIntro separately from the site's summary. It selects the first top-level prose paragraph, skipping headings, italic-only subtitles, blockquotes, lists, images and code. Inline formatting is converted to readable text, link text is retained, and footnote markers are omitted. The complete paragraph is used without the 180-character truncation. EN and KO use their own paragraph. The email body is title -> opening paragraph -> Read Research button, with the required unsubscribe link below. Existing summary fields and site previews are unchanged. Legacy indexes without emailIntro retain the old summary fallback; newly built versions always include emailIntro and fail notification planning if no prose paragraph exists.
+
+## Four-paragraph email excerpts
+
+New builds include emailParagraphs with the first four top-level prose paragraphs, without truncation and with paragraph boundaries preserved. Articles with fewer than four paragraphs use all available prose. The mail renders a linked title, excerpt and prominent Read Research button. Unsubscribe appears in the header and footer so it remains accessible if a mail client folds repeated footer content. Manual test subjects include the batch identifier to distinguish revisions; mail-client folding remains client-controlled. No historical production notification is resent by this formatting change.

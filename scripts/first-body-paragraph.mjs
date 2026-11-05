@@ -1,5 +1,6 @@
 // Receives markdown-it's parsed tokens; no HTML decoding or truncation needed.
-export function firstBodyParagraph(tokens) {
+export function firstBodyParagraphs(tokens, limit = 4) {
+  const paragraphs = [];
   for (let i = 0; i < tokens.length - 1; i++) {
     if (tokens[i].type !== 'paragraph_open' || tokens[i].level !== 0) continue;
     const inline = tokens[i + 1];
@@ -11,7 +12,12 @@ export function firstBodyParagraph(tokens) {
       ['text', 'code_inline'].includes(token.type) ? token.content :
       ['softbreak', 'hardbreak'].includes(token.type) ? ' ' : ''
     ).join('').replace(/\s+/g, ' ').trim();
-    if (text) return text;
+    if (text) paragraphs.push(text);
+    if (paragraphs.length === limit) break;
   }
-  return '';
+  return paragraphs;
+}
+
+export function firstBodyParagraph(tokens) {
+  return firstBodyParagraphs(tokens, 1)[0] ?? '';
 }

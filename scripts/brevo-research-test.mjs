@@ -4,11 +4,11 @@ import { pathToFileURL } from 'node:url';
 import { planNotifications } from './research-notifications.mjs';
 
 export const TEST_RECIPIENT = 'greg.kkang@gmail.com';
-export function testDraft(campaign) {
+export function testDraft(campaign, batch) {
   return {
     name: `TEST ${campaign.name}`,
     sender: campaign.sender,
-    subject: `[TEST] ${campaign.subject}`,
+    subject: `${batch ? `[TEST ${batch}]` : '[TEST]'} ${campaign.subject}`,
     previewText: campaign.previewText,
     htmlContent: campaign.htmlContent,
     replyTo: campaign.sender.email,
@@ -28,7 +28,7 @@ export async function sendTestPair(plan, batch, store, brevo) {
     }
     const record = { mode: 'test', articleId: plan.id, lang: campaign.lang, batch, status: 'creating', updatedAt: new Date().toISOString() };
     await store.put(key, record);
-    const created = await brevo('/emailCampaigns', testDraft(campaign));
+    const created = await brevo('/emailCampaigns', testDraft(campaign, batch));
     if (!Number.isSafeInteger(created.id) || created.id <= 0) throw new Error('Invalid campaign ID; reconcile with Brevo');
     record.campaignId = created.id;
     record.status = 'sending-test';

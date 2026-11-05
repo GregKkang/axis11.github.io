@@ -25,7 +25,10 @@ export function planNotifications(articles, config, siteUrl) {
     const campaigns = ['en', 'ko'].map(lang => {
       const version = article.versions[lang];
       if (!version.title || typeof version.summary !== 'string') throw new Error(`Missing metadata: ${id}/${lang}`);
-      const intro = version.emailIntro ?? version.summary;
+      const paragraphs = version.emailParagraphs ?? [version.emailIntro ?? version.summary];
+      if (!Array.isArray(paragraphs) || !paragraphs.length || paragraphs.some(p => typeof p !== 'string' || !p.trim())) throw new Error(`Missing body paragraphs: ${id}/${lang}`);
+      const intro = paragraphs[0];
+      const excerptHtml = paragraphs.slice(0, 4).map(p => `<p style="margin:0 0 18px;line-height:1.7">${escape(p)}</p>`).join('');
       if (typeof intro !== 'string' || !intro.trim()) throw new Error(`Missing first body paragraph: ${id}/${lang}`);
       const suffix = article.primaryLang === lang ? '' : `${lang}/`;
       const link = new URL(`research/${id}/${suffix}`, site.href.replace(/\/?$/, '/')).href;
@@ -38,7 +41,7 @@ export function planNotifications(articles, config, siteUrl) {
         subject: `[AXIS11 Research] ${version.title}`,
         previewText: intro,
         link,
-        htmlContent: `<!doctype html><html lang="${lang}"><body><p>AXIS11 Research</p><h1>${escape(version.title)}</h1><p>${escape(intro)}</p><p><a href="${escape(link)}">${label}</a></p><p><a href="{{ unsubscribe }}">${lang === 'ko' ? '구독 취소' : 'Unsubscribe'}</a></p></body></html>`,
+        htmlContent: `<!doctype html><html lang="${lang}"><body><p>AXIS11 Research · <a href="{{ unsubscribe }}">${lang === 'ko' ? '구독 취소' : 'Unsubscribe'}</a></p><h1><a href="${escape(link)}" style="color:#111;text-decoration:none">${escape(version.title)}</a></h1>${excerptHtml}<p><a href="${escape(link)}" style="display:inline-block;padding:12px 20px;background:#163a36;color:#fff;text-decoration:none;border-radius:6px">${label}</a></p><p><a href="{{ unsubscribe }}">${lang === 'ko' ? '구독 취소' : 'Unsubscribe'}</a></p></body></html>`,
       };
     });
     plans.push({ id, campaigns });
