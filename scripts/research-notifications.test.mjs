@@ -58,7 +58,8 @@ test('renders four distinct paragraphs and visible article and unsubscribe links
     assert.ok(!c.htmlContent.includes('Fifth'));
     assert.ok(c.htmlContent.includes('href="' + c.link + '"'));
     assert.ok(c.htmlContent.includes('href="{{ unsubscribe }}"'));
-    assert.ok(c.htmlContent.indexOf('href="{{ unsubscribe }}"') < c.htmlContent.indexOf('First &amp; full'));
+    assert.equal(c.htmlContent.split('href="{{ unsubscribe }}"').length - 1, 1);
+    assert.ok(c.htmlContent.indexOf('href="{{ unsubscribe }}"') > c.htmlContent.indexOf('Fourth'));
     assert.ok(c.htmlContent.lastIndexOf('href="' + c.link + '"') > c.htmlContent.indexOf('Fourth'));
   }
 });

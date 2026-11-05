@@ -41,7 +41,7 @@ export function planNotifications(articles, config, siteUrl) {
         subject: `[AXIS11 Research] ${version.title}`,
         previewText: intro,
         link,
-        htmlContent: `<!doctype html><html lang="${lang}"><body><p>AXIS11 Research · <a href="{{ unsubscribe }}">${lang === 'ko' ? '구독 취소' : 'Unsubscribe'}</a></p><h1><a href="${escape(link)}" style="color:#111;text-decoration:none">${escape(version.title)}</a></h1>${excerptHtml}<p><a href="${escape(link)}" style="display:inline-block;padding:12px 20px;background:#163a36;color:#fff;text-decoration:none;border-radius:6px">${label}</a></p><p><a href="{{ unsubscribe }}">${lang === 'ko' ? '구독 취소' : 'Unsubscribe'}</a></p></body></html>`,
+        htmlContent: `<!doctype html><html lang="${lang}"><body><p>AXIS11 Research</p><h1><a href="${escape(link)}" style="color:#111;text-decoration:none">${escape(version.title)}</a></h1>${excerptHtml}<p><a href="${escape(link)}" style="display:inline-block;padding:12px 20px;background:#163a36;color:#fff;text-decoration:none;border-radius:6px">${label}</a></p><p><a href="{{ unsubscribe }}">${lang === 'ko' ? '구독 취소' : 'Unsubscribe'}</a></p></body></html>`,
       };
     });
     plans.push({ id, campaigns });
