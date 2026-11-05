@@ -3,6 +3,7 @@
   "articleId": "equities-bonds/news-explains-markets",
   "lang": "ko",
   "batch": "four-paragraph-test-1",
-  "status": "creating",
-  "updatedAt": "2026-11-05T19:07:01.759Z"
+  "status": "sending-test",
+  "updatedAt": "2026-11-05T19:07:01.759Z",
+  "campaignId": 10
 }
