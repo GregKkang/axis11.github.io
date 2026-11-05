@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { firstBodyParagraph } from './first-body-paragraph.mjs';
+import { firstBodyParagraph, firstBodyParagraphs } from './first-body-paragraph.mjs';
 const paragraph = (children, level = 0) => [{type:'paragraph_open', level}, {type:'inline', children}, {type:'paragraph_close', level}];
 test('skips headings, italic subtitles, quotes and image paragraphs', () => {
   const tokens = [
@@ -21,4 +21,10 @@ test('keeps full length, decoded text, linked words and inline code; omits footn
 });
 test('returns empty when there is no prose paragraph', () => {
   assert.equal(firstBodyParagraph([{type:'fence',content:'code'}]), '');
+});
+
+test('extracts four complete prose paragraphs in order and preserves short articles', () => {
+  const tokens = Array.from({length: 6}, (_, i) => paragraph([{type:'text', content:'Paragraph ' + (i + 1)}])).flat();
+  assert.deepEqual(firstBodyParagraphs(tokens), ['Paragraph 1','Paragraph 2','Paragraph 3','Paragraph 4']);
+  assert.deepEqual(firstBodyParagraphs(tokens.slice(0, 6)), ['Paragraph 1','Paragraph 2']);
 });
