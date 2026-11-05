@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "initializedAt": "2026-11-05T03:24:20.429Z",
+  "initializedCommit": "f6c3ff88bc2bee491d86d717012cfd13e69e0113",
+  "articles": {
+    "commodities/abundant-oil-scarce-supply": {
+      "status": "baseline"
+    },
+    "commodities/grain-inflation-risk": {
+      "status": "baseline"
+    },
+    "commodities/spr-release-announced-vs-delivered": {
+      "status": "baseline"
+    },
+    "equities-bonds/ai-capex-credit-channels": {
+      "status": "baseline"
+    },
+    "equities-bonds/ai-capex-sp500-earnings": {
+      "status": "baseline"
+    },
+    "equities-bonds/dealer-gamma": {
+      "status": "baseline"
+    },
+    "equities-bonds/kpi-binary-options": {
+      "status": "baseline"
+    },
+    "equities-bonds/llm-option-factors": {
+      "status": "baseline"
+    },
+    "equities-bonds/ml-us-10y-yield-forecast": {
+      "status": "baseline"
+    },
+    "equities-bonds/news-explains-markets": {
+      "status": "baseline"
+    },
+    "equities-bonds/tips-real-yields-inflation": {
+      "status": "baseline"
+    },
+    "equities-bonds/treasury-basis-unwind": {
+      "status": "baseline"
+    },
+    "equities-bonds/us-10y-real-rate-repricing": {
+      "status": "baseline"
+    },
+    "global-macro/writing-for-axis11-research": {
+      "status": "baseline"
+    },
+    "technology/memory-cycle-inflection": {
+      "status": "baseline"
+    }
+  }
+}
