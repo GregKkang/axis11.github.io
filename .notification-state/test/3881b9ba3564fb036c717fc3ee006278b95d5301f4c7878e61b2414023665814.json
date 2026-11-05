@@ -3,6 +3,7 @@
   "articleId": "technology/memory-cycle-inflection",
   "lang": "en",
   "batch": "four-paragraph-test-1",
-  "status": "creating",
-  "updatedAt": "2026-11-05T19:08:00.232Z"
+  "status": "sending-test",
+  "updatedAt": "2026-11-05T19:08:00.232Z",
+  "campaignId": 11
 }
