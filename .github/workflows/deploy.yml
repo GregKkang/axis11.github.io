@@ -39,7 +39,7 @@ jobs:
       - name: Package notification preview inputs
         run: |
           mkdir -p .notification-inputs
-          cp src/data/articles.json scripts/research-notifications.mjs .github/research-notifications.json .notification-inputs/
+          cp src/data/articles.json scripts/research-notifications.mjs scripts/brevo-research-live.mjs .github/research-notifications.json .notification-inputs/
       - uses: actions/upload-artifact@v4
         with:
           name: research-notification-inputs
@@ -109,3 +109,28 @@ jobs:
           name: research-notification-preview
           path: notification-preview/
           retention-days: 14
+
+  research-notifications:
+    name: Send new Research notifications
+    needs: [build, deploy]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.BREVO_RESEARCH_PAUSED != 'true'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: research-notification-state
+      cancel-in-progress: false
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/download-artifact@v4
+        with:
+          name: research-notification-inputs
+          path: notification-inputs
+      - name: Notify once per new bilingual Research article
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+          DEPLOYED_SITE_URL: ${{ needs.deploy.outputs.page_url }}
+        run: node notification-inputs/brevo-research-live.mjs notification-inputs/articles.json notification-inputs/research-notifications.json
