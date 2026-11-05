@@ -1,0 +1,42 @@
+name: Research notification test email
+on:
+  workflow_dispatch:
+    inputs:
+      article_id:
+        description: Published Research category/slug
+        required: true
+        default: equities-bonds/news-explains-markets
+        type: string
+      test_batch:
+        description: Unique test batch (same batch cannot resend)
+        required: true
+        default: initial-test
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: research-notification-state
+  cancel-in-progress: false
+jobs:
+  test-email:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run content
+      - name: Send EN and KO tests only to the approved test recipient
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+          TEST_ARTICLE_ID: ${{ inputs.article_id }}
+          TEST_BATCH: ${{ inputs.test_batch }}
+        run: node scripts/brevo-research-test.mjs
