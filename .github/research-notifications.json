@@ -25,5 +25,6 @@
     "equities-bonds/us-10y-real-rate-repricing",
     "global-macro/writing-for-axis11-research",
     "technology/memory-cycle-inflection"
-  ]
+  ],
+  "productionEnabled": true
 }
