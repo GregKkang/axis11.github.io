@@ -25,6 +25,8 @@ export function planNotifications(articles, config, siteUrl) {
     const campaigns = ['en', 'ko'].map(lang => {
       const version = article.versions[lang];
       if (!version.title || typeof version.summary !== 'string') throw new Error(`Missing metadata: ${id}/${lang}`);
+      const intro = version.emailIntro ?? version.summary;
+      if (typeof intro !== 'string' || !intro.trim()) throw new Error(`Missing first body paragraph: ${id}/${lang}`);
       const suffix = article.primaryLang === lang ? '' : `${lang}/`;
       const link = new URL(`research/${id}/${suffix}`, site.href.replace(/\/?$/, '/')).href;
       const label = lang === 'ko' ? '리서치 읽기' : 'Read Research';
@@ -34,9 +36,9 @@ export function planNotifications(articles, config, siteUrl) {
         sender: config.sender,
         recipients: { segmentIds: [config.segmentIds[lang]] },
         subject: `[AXIS11 Research] ${version.title}`,
-        previewText: version.summary,
+        previewText: intro,
         link,
-        htmlContent: `<!doctype html><html lang="${lang}"><body><p>AXIS11 Research</p><h1>${escape(version.title)}</h1><p>${escape(version.summary)}</p><p><a href="${escape(link)}">${label}</a></p><p><a href="{{ unsubscribe }}">${lang === 'ko' ? '구독 취소' : 'Unsubscribe'}</a></p></body></html>`,
+        htmlContent: `<!doctype html><html lang="${lang}"><body><p>AXIS11 Research</p><h1>${escape(version.title)}</h1><p>${escape(intro)}</p><p><a href="${escape(link)}">${label}</a></p><p><a href="{{ unsubscribe }}">${lang === 'ko' ? '구독 취소' : 'Unsubscribe'}</a></p></body></html>`,
       };
     });
     plans.push({ id, campaigns });

@@ -8,7 +8,7 @@ New Research notifications run after a successful main push deployment. The depl
 - category/slug is the permanent publication identity. Keep published slugs stable; a rename is a new identity.
 - Both en.md and ko.md must be public before one event is eligible. Two commits for the two languages still form one event.
 - EN uses segment 1, KO segment 2. Both segments were created from PREFERRED_LANGUAGE and membership of AXIS11 Research Subscribers (#3). Brevo campaign subscription/blocklist suppression applies.
-- Sender: AXIS11 Research <greg@axis11research.com>. Emails contain the version's title, summary, public language link and unsubscribe link.
+- Sender: AXIS11 Research <greg@axis11research.com>. Emails contain the version's title, full first body paragraph, public language link and unsubscribe link.
 - The writing template and original article identities remain explicitly excluded in .github/research-notifications.json.
 
 ## Activation
@@ -56,3 +56,7 @@ Run:
 node --test scripts/research-notifications.test.mjs scripts/brevo-research-test.test.mjs scripts/brevo-research-live.test.mjs
 
 Coverage includes historical bootstrap, EN/KO grouping and segments, split language commits, edits/republication/reruns, Market Pulse exclusion, partial success, uncertain creation/send, failure to persist intent or acknowledgement, broken public links, invalid state, and GitHub blob SHA updates.
+
+## Email opening paragraph
+
+The content builder adds emailIntro separately from the site's summary. It selects the first top-level prose paragraph, skipping headings, italic-only subtitles, blockquotes, lists, images and code. Inline formatting is converted to readable text, link text is retained, and footnote markers are omitted. The complete paragraph is used without the 180-character truncation. EN and KO use their own paragraph. The email body is title -> opening paragraph -> Read Research button, with the required unsubscribe link below. Existing summary fields and site previews are unchanged. Legacy indexes without emailIntro retain the old summary fallback; newly built versions always include emailIntro and fail notification planning if no prose paragraph exists.

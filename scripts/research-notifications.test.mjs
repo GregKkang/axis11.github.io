@@ -35,3 +35,15 @@ test('live mode and malformed identities fail closed', () => {
 test('duplicate articles fail instead of duplicating campaigns', () => {
   assert.throws(() => planNotifications([article(), article()], config, 'https://example.com/'));
 });
+
+test('email uses full first body paragraph instead of the short site summary', () => {
+  const a = article();
+  const intro = 'This is the full opening paragraph. '.repeat(15);
+  a.versions.en.emailIntro = intro;
+  a.versions.ko.emailIntro = '한국어 첫 번째 본문 문단 전체입니다.';
+  const [en, ko] = planNotifications([a], config, 'https://example.com/').plans[0].campaigns;
+  assert.ok(en.htmlContent.includes(intro));
+  assert.ok(!en.htmlContent.includes('English &amp; summary'));
+  assert.equal(en.previewText, intro);
+  assert.ok(ko.htmlContent.includes(a.versions.ko.emailIntro));
+});

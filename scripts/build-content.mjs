@@ -14,6 +14,7 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import matter from "gray-matter";
+import { firstBodyParagraph } from "./first-body-paragraph.mjs";
 import MarkdownIt from "markdown-it";
 import footnote from "markdown-it-footnote";
 import attrs from "markdown-it-attrs";
@@ -419,6 +420,7 @@ async function readVersion(articleDir, lang, where, assetPrefix) {
     lang,
     title: String(fm.title),
     summary: plainSummary(blocks, fm.summary ? String(fm.summary) : null),
+    emailIntro: firstBodyParagraph(md.parse(content, {})),
     readingMinutes: readingMinutes(content, lang),
     blocks,
   };
