@@ -16,6 +16,7 @@ const MarketPulse = () => {
             <h1 className="font-heading text-4xl md:text-6xl">Market Pulse</h1>
             <p className="mt-5 max-w-2xl text-lg md:text-xl leading-relaxed text-primary-foreground/80">AI-generated indicators that put daily market moves in context.</p>
             <p className="mt-4 max-w-2xl text-sm md:text-base leading-relaxed text-primary-foreground/60">A daily view of the market, using AI to turn news and price movements into quantitative indicators. Explore how the market narrative is changing and how it relates to observed returns.</p>
+            <div id="market-pulse-explainer" className="mt-6"><a href="https://axis11research.com/research/equities-bonds/news-explains-markets/" className="text-sm font-semibold text-gold underline underline-offset-4">How Market Pulse works <span aria-hidden="true">→</span></a><p className="mt-2 text-sm leading-relaxed text-primary-foreground/60">Read the research note behind the model and its daily readings.</p></div>
           </div>
         </header>
         <section aria-labelledby="daily-update-title" className="mx-auto max-w-6xl px-6 py-12 md:py-16">
