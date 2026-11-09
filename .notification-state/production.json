@@ -75,7 +75,7 @@
           "acceptedAt": "2026-11-09T06:14:21.924Z"
         },
         {
-          "status": "sending",
+          "status": "accepted",
           "payload": {
             "lang": "ko",
             "name": "AXIS11 commodities/what-gold-hedges ko",
@@ -93,7 +93,8 @@
             "link": "https://axis11research.com/research/commodities/what-gold-hedges/ko/",
             "htmlContent": "<!doctype html><html lang=\"ko\"><body><p>AXIS11 Research</p><h1><a href=\"https://axis11research.com/research/commodities/what-gold-hedges/ko/\" style=\"color:#111;text-decoration:none\">금은 무엇을 헤지하는가</a></h1><p style=\"margin:0 0 18px;line-height:1.7\">우리는 흔히 금 가격이 상승할 때 이를 물가에 대한 헤지로 해석하는 기사나 분석 자료를 접한다. 실제로 그랬을까? 최근 금 가격이 큰 상승기를 거친 뒤 조정을 받은 것은 어떤 의미일까? 이 노트는 이 두 가지 궁금증에서 시작했다.</p><p style=\"margin:0 0 18px;line-height:1.7\">물가가 오르면 화폐의 구매력이 낮아진다. 공급을 쉽게 늘릴 수 없는 금이 그 손실을 보완해 줄 것이라는 설명은 자연스럽다. 그러나 그 설명만으로는 금이 언제 오르고, 언제 하락하는지 이해하기 어렵다. 물가가 빠르게 오르는데 금은 하락할 수 있고, 물가가 안정된 동안 금 가격이 큰 폭으로 상승할 수도 있기 때문이다.</p><p style=\"margin:0 0 18px;line-height:1.7\">실질금리를 함께 보면 설명이 조금 더 구체적이 된다. 금은 이자를 지급하지 않는다. 물가를 제외하고도 이자를 받을 수 있는 자산이 있다면 금을 보유하는 기회비용은 커진다. 반대로 실질금리가 낮아지면 그 비용은 줄어든다. 그렇다면 금은 실질금리가 마이너스인 기간에 오르는 것일까? 아니면 금리가 내려가는 동안 오르는 것일까?</p><p style=\"margin:0 0 18px;line-height:1.7\">이 노트는 미국 물가와 금 선물 가격을 비교하고, 실질금리의 수준과 변화를 구분한다. 그리고 1970년대의 경험이 어떻게 금에 대한 설명으로 남았는지 살펴본다. 최근 조정의 원인을 하나로 단정하거나 적정 가격을 계산하려는 것은 아니다. 관심은 금의 상승을 설명하는 논리와, 그 가격에서 기대할 수 있는 성과가 얼마나 일치하는가에 있다.</p><p><a href=\"https://axis11research.com/research/commodities/what-gold-hedges/ko/\" style=\"display:inline-block;padding:12px 20px;background:#163a36;color:#fff;text-decoration:none;border-radius:6px\">리서치 읽기</a></p><p><a href=\"{{ unsubscribe }}\">구독 취소</a></p></body></html>"
           },
-          "campaignId": 14
+          "campaignId": 14,
+          "acceptedAt": "2026-11-09T06:14:26.413Z"
         }
       ]
     }
