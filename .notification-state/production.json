@@ -53,7 +53,7 @@
       "sourceSha": "f72ad5231f7d3861cb3ac614c3338ef277c41c01",
       "campaigns": [
         {
-          "status": "created",
+          "status": "sending",
           "payload": {
             "lang": "en",
             "name": "AXIS11 commodities/what-gold-hedges en",
