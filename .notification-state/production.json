@@ -75,7 +75,7 @@
           "acceptedAt": "2026-11-09T06:14:21.924Z"
         },
         {
-          "status": "created",
+          "status": "sending",
           "payload": {
             "lang": "ko",
             "name": "AXIS11 commodities/what-gold-hedges ko",
