@@ -17,6 +17,26 @@ const HeroSection = () => (
           <p className="mt-3 text-sm md:text-base leading-6 text-primary-foreground/70">Independent research. A deeper perspective on markets.</p>
         </div>
       </div>
+      <p className="mt-5 text-sm leading-6 text-primary-foreground/60 sm:ml-[97px] md:ml-[113px]">
+        Get new research by email.{" "}
+        <a
+          href="#subscribe"
+          className="ml-1 inline-block font-medium text-gold underline-offset-4 hover:underline focus-visible:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+          onClick={(event) => {
+            const target = document.getElementById("subscribe");
+            if (!target) return;
+            event.preventDefault();
+            window.history.pushState(null, "", "#subscribe");
+            target.focus({ preventScroll: true });
+            target.scrollIntoView({
+              behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+              block: "start",
+            });
+          }}
+        >
+          Subscribe <span aria-hidden="true">→</span>
+        </a>
+      </p>
     </div>
   </header>
 );

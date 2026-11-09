@@ -3,7 +3,9 @@ export default function ResearchSubscribe() {
   return (
     <section
       id="subscribe"
-      className="mx-auto max-w-3xl px-6 py-6"
+      tabIndex={-1}
+      aria-label="Subscribe to AXIS11 Research"
+      className="mx-auto max-w-3xl scroll-mt-24 px-6 py-6 focus:outline-none"
     >
       <iframe
         title="AXIS11 Research Subscription"
