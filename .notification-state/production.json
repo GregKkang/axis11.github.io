@@ -53,7 +53,7 @@
       "sourceSha": "f72ad5231f7d3861cb3ac614c3338ef277c41c01",
       "campaigns": [
         {
-          "status": "sending",
+          "status": "accepted",
           "payload": {
             "lang": "en",
             "name": "AXIS11 commodities/what-gold-hedges en",
@@ -71,7 +71,8 @@
             "link": "https://axis11research.com/research/commodities/what-gold-hedges/",
             "htmlContent": "<!doctype html><html lang=\"en\"><body><p>AXIS11 Research</p><h1><a href=\"https://axis11research.com/research/commodities/what-gold-hedges/\" style=\"color:#111;text-decoration:none\">What Does Gold Hedge?</a></h1><p style=\"margin:0 0 18px;line-height:1.7\">Gold rallies are often described as a response to inflation. But gold can fall while consumer prices rise rapidly, and surge when inflation is subdued. The recent rally and correction raise a familiar question: what, exactly, is the investor buying protection against?</p><p style=\"margin:0 0 18px;line-height:1.7\">The inflation argument is intuitive. Rising prices erode money’s purchasing power, while gold’s supply is difficult to expand. That helps explain why investors might want to own it. It says much less about when the price will rise or what return a buyer can expect.</p><p style=\"margin:0 0 18px;line-height:1.7\">Real yields provide another channel. Gold pays no interest, so an interest-bearing asset offering a return above inflation raises its opportunity cost. Yet two claims are often confused: that gold benefits from negative real yields, and that it benefits when real yields fall.</p><p style=\"margin:0 0 18px;line-height:1.7\">This note compares gold futures prices with US inflation, distinguishes the level of real yields from changes in them, and revisits the 1970s experience behind gold’s inflation-hedge reputation. It then considers how these relationships help interpret the recent rally and correction. The central distinction is between a reason to own gold and the return available at the price paid; the analysis does not estimate fair value or isolate one cause of the correction.</p><p><a href=\"https://axis11research.com/research/commodities/what-gold-hedges/\" style=\"display:inline-block;padding:12px 20px;background:#163a36;color:#fff;text-decoration:none;border-radius:6px\">Read Research</a></p><p><a href=\"{{ unsubscribe }}\">Unsubscribe</a></p></body></html>"
           },
-          "campaignId": 13
+          "campaignId": 13,
+          "acceptedAt": "2026-11-09T06:14:21.924Z"
         },
         {
           "status": "ready",
