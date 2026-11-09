@@ -49,7 +49,7 @@
       "status": "baseline"
     },
     "commodities/what-gold-hedges": {
-      "status": "active",
+      "status": "complete",
       "sourceSha": "f72ad5231f7d3861cb3ac614c3338ef277c41c01",
       "campaigns": [
         {
