@@ -103,7 +103,7 @@
       "sourceSha": "46f6cbcc2ee1783261dbed08eefbf396c189627d",
       "campaigns": [
         {
-          "status": "created",
+          "status": "sending",
           "payload": {
             "lang": "en",
             "name": "AXIS11 global-macro/energy-shock-core-inflation en",
