@@ -125,7 +125,7 @@
           "acceptedAt": "2026-11-10T06:31:02.016Z"
         },
         {
-          "status": "creating",
+          "status": "created",
           "payload": {
             "lang": "ko",
             "name": "AXIS11 global-macro/energy-shock-core-inflation ko",
@@ -142,7 +142,8 @@
             "previewText": "미국의 10월 CPI 발표를 앞두고 시장이 예상하는 전년 대비 상승률은 전체 3.9%, 근원 2.8%다. 높은 물가가 이어지면서 12월 연준의 추가 금리 인상 가능성이 다시 정책 판단의 중심에 놓여 있다. 그러나 단기적인 긴축 위험과 2027년의 물가 경로는 구분해 볼 필요가 있다. 이 노트는 내년 유가가 낮아진다는 기본 시나리오 아래, 에너지 비용의 완화가 어느 범위까지 물가 압력을 줄일 수 있고 어떤 위험은 남는지를 검토하기 위해 작성했다. 10월 CPI 사전 전망",
             "link": "https://axis11research.com/research/global-macro/energy-shock-core-inflation/ko/",
             "htmlContent": "<!doctype html><html lang=\"ko\"><body><p>AXIS11 Research</p><h1><a href=\"https://axis11research.com/research/global-macro/energy-shock-core-inflation/ko/\" style=\"color:#111;text-decoration:none\">에너지 충격은 어떻게 근원물가로 전이되는가</a></h1><p style=\"margin:0 0 18px;line-height:1.7\">미국의 10월 CPI 발표를 앞두고 시장이 예상하는 전년 대비 상승률은 전체 3.9%, 근원 2.8%다. 높은 물가가 이어지면서 12월 연준의 추가 금리 인상 가능성이 다시 정책 판단의 중심에 놓여 있다. 그러나 단기적인 긴축 위험과 2027년의 물가 경로는 구분해 볼 필요가 있다. 이 노트는 내년 유가가 낮아진다는 기본 시나리오 아래, 에너지 비용의 완화가 어느 범위까지 물가 압력을 줄일 수 있고 어떤 위험은 남는지를 검토하기 위해 작성했다. 10월 CPI 사전 전망</p><p style=\"margin:0 0 18px;line-height:1.7\">이 전제는 9월 노트 Paradox: 풍부한 원유 그러나 부족한 공급에서 정리한 중기 견해를 이어받은 것이다. 희소한 것은 자원 자체가 아니라 그것을 옮기는 수송 경로이며, 협상과 공급·수요 적응에 대한 기대가 실제 물동량 정상화보다 먼저 가격을 돌려세울 수 있다는 내용이었다. 그 노트가 유가의 방향을 다뤘다면, 이 노트는 방향을 전제로 두고 다른 질문을 던진다. 그 충격이 만든 물가 가운데 어디까지가 유가와 함께 되돌아오는가.</p><p style=\"margin:0 0 18px;line-height:1.7\">현재 미국의 물가는 여러 충격이 겹친 결과다. 팬데믹 이후 물가 안정 과정이 완결되지 않은 가운데, AI 인프라 투자 확대가 메모리 등 반도체 수급을 압박하고 PC·스마트폰 같은 소비재의 원가와 판매가격에도 영향을 주고 있다. 여기에 전쟁에 따른 에너지·물류 비용 상승이 더해졌다. AI 수요에 따른 메모리 가격 상승이 일부 소비자 전자제품의 가격 인상으로 이어졌다는 보도가 이어졌다. 다만 반도체 가격 상승률이 품질 조정과 품목 비중을 거쳐 CPI에 반영되는 정도는 별도로 확인해야 한다. 누적된 높은 가격 수준과 현재의 물가상승률 역시 구분할 필요가 있다. AI 칩플레이션 보도, 2026년</p><p style=\"margin:0 0 18px;line-height:1.7\">이때 검토해야 할 질문은 다음과 같다. 전쟁이 끝나고 유가가 정상화되면, 전쟁 이후 높아진 기대인플레이션도 낮아질 수 있을까? 과거 사례와 연구는 이러한 기대에 얼마나 명확한 근거를 제공하는가? 답을 얻으려면 에너지의 직접 가격 효과와 기업의 비용 전가, 기대·임금의 변화를 구분해야 한다. 유가 하락을 전체 물가 안정의 충분조건으로 가정하지 않고, 여러 물가 요인 가운데 전쟁·에너지 충격의 기여가 어느 경로로 확대되거나 완화되는지를 살펴본다.</p><p><a href=\"https://axis11research.com/research/global-macro/energy-shock-core-inflation/ko/\" style=\"display:inline-block;padding:12px 20px;background:#163a36;color:#fff;text-decoration:none;border-radius:6px\">리서치 읽기</a></p><p><a href=\"{{ unsubscribe }}\">구독 취소</a></p></body></html>"
-          }
+          },
+          "campaignId": 16
         }
       ]
     }
