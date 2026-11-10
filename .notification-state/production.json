@@ -103,7 +103,7 @@
       "sourceSha": "46f6cbcc2ee1783261dbed08eefbf396c189627d",
       "campaigns": [
         {
-          "status": "creating",
+          "status": "created",
           "payload": {
             "lang": "en",
             "name": "AXIS11 global-macro/energy-shock-core-inflation en",
@@ -120,7 +120,8 @@
             "previewText": "Ahead of the US October CPI release, markets expect headline inflation of 3.9% year on year and core inflation of 2.8%. Another Federal Reserve rate increase in December is again part of the policy debate. That near-term risk should be considered alongside the outlook for 2027. Assuming oil prices fall next year, how much inflation pressure would ease—and what would remain? October CPI preview",
             "link": "https://axis11research.com/research/global-macro/energy-shock-core-inflation/",
             "htmlContent": "<!doctype html><html lang=\"en\"><body><p>AXIS11 Research</p><h1><a href=\"https://axis11research.com/research/global-macro/energy-shock-core-inflation/\" style=\"color:#111;text-decoration:none\">How an Energy Shock Reaches Core Inflation</a></h1><p style=\"margin:0 0 18px;line-height:1.7\">Ahead of the US October CPI release, markets expect headline inflation of 3.9% year on year and core inflation of 2.8%. Another Federal Reserve rate increase in December is again part of the policy debate. That near-term risk should be considered alongside the outlook for 2027. Assuming oil prices fall next year, how much inflation pressure would ease—and what would remain? October CPI preview</p><p style=\"margin:0 0 18px;line-height:1.7\">That assumption carries over the medium-term view set out in September’s note, The Oil Paradox: Abundant Resources, Scarce Supply: what is scarce is not the resource but the routes that move it, and expectations of diplomacy and of supply-and-demand adjustment can turn prices before physical flows recover. That note asked where the oil price was heading. This one takes the direction as given and asks a different question — how much of the inflation the shock created comes back down with it.</p><p style=\"margin:0 0 18px;line-height:1.7\">Several pressures overlap. Post-pandemic disinflation remains incomplete. AI infrastructure demand is straining memory and other semiconductor supply, raising component costs for some PCs and smartphones. War has added energy and logistics costs. Reports of AI-driven “chipflation” identify a potential consumer-goods channel, but the effect on CPI depends on quality adjustment, item weights and actual retail-price changes. A higher accumulated price level also differs from a higher current inflation rate. Reporting on AI “chipflation”, 2026</p><p style=\"margin:0 0 18px;line-height:1.7\">If war-related energy costs normalise, will the inflation expectations associated with the shock decline too? Answering that requires separating three channels: energy prices paid directly by households, costs passed through by firms, and changes in expectations and wage setting.</p><p><a href=\"https://axis11research.com/research/global-macro/energy-shock-core-inflation/\" style=\"display:inline-block;padding:12px 20px;background:#163a36;color:#fff;text-decoration:none;border-radius:6px\">Read Research</a></p><p><a href=\"{{ unsubscribe }}\">Unsubscribe</a></p></body></html>"
-          }
+          },
+          "campaignId": 15
         },
         {
           "status": "ready",
