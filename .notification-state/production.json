@@ -125,7 +125,7 @@
           "acceptedAt": "2026-11-10T06:31:02.016Z"
         },
         {
-          "status": "ready",
+          "status": "creating",
           "payload": {
             "lang": "ko",
             "name": "AXIS11 global-macro/energy-shock-core-inflation ko",
