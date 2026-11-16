@@ -153,7 +153,7 @@
       "sourceSha": "b81bad39c98be3155a7f63b2c6852f34ea97c157",
       "campaigns": [
         {
-          "status": "sending",
+          "status": "accepted",
           "payload": {
             "lang": "en",
             "name": "AXIS11 commodities/hormuz-mine-claims en",
@@ -171,7 +171,8 @@
             "link": "https://axis11research.com/research/commodities/hormuz-mine-claims/",
             "htmlContent": "<!doctype html><html lang=\"en\"><body><p>AXIS11 Research</p><h1><a href=\"https://axis11research.com/research/commodities/hormuz-mine-claims/\" style=\"color:#111;text-decoration:none\">Iran’s Mine Claims and the Recovery in Gulf Oil Exports</a></h1><p style=\"margin:0 0 18px;line-height:1.7\">Iran has repeatedly claimed that ships struck mines in or near the Strait of Hormuz. The claims in the public record date back at least to 31 August, after the 17 August US–Iran memorandum of understanding. For the oil market, the concern is tangible: serious damage to a loaded tanker could disrupt shipments and spill crude.</p><p style=\"margin:0 0 18px;line-height:1.7\">Gulf crude exports nevertheless recovered. The International Energy Agency (IEA) puts October exports at 15 million barrels a day, or 82% of the pre-war level. Two questions follow: how much of the reported damage can be verified, and how have exporters kept oil moving with far fewer vessels transiting the strait? Kpler on the 60 days since the MOU · IEA November report · UKMTO, 13 November</p><p style=\"margin:0 0 18px;line-height:1.7\">Iran’s Islamic Revolutionary Guard Corps has repeatedly described ships striking mines after using routes it had not authorised. Public reports document vessel damage in the region. Matching an incident to a specific Iranian claim requires two further pieces of evidence: which vessel was hit and what caused the damage. In the cases below, that evidence is often missing.</p><p style=\"margin:0 0 18px;line-height:1.7\">United Kingdom Maritime Trade Operations (UKMTO) recorded 83 attacks on vessels in the Strait of Hormuz and nearby waters from 17 August to 11 November. Six were recorded as total losses. Of the rest, 31 continued their voyage, 20 required assistance such as towing or rescue, and 26 had an unknown outcome. The confirmed total losses account for about 7% of the cases; unresolved outcomes could raise that share. The tally covers attacks generally and does not identify the six losses as mine strikes. UKMTO</p><p><a href=\"https://axis11research.com/research/commodities/hormuz-mine-claims/\" style=\"display:inline-block;padding:12px 20px;background:#163a36;color:#fff;text-decoration:none;border-radius:6px\">Read Research</a></p><p><a href=\"{{ unsubscribe }}\">Unsubscribe</a></p></body></html>"
           },
-          "campaignId": 17
+          "campaignId": 17,
+          "acceptedAt": "2026-11-16T02:03:39.233Z"
         },
         {
           "status": "ready",
