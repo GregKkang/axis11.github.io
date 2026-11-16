@@ -153,7 +153,7 @@
       "sourceSha": "b81bad39c98be3155a7f63b2c6852f34ea97c157",
       "campaigns": [
         {
-          "status": "ready",
+          "status": "creating",
           "payload": {
             "lang": "en",
             "name": "AXIS11 commodities/hormuz-mine-claims en",
