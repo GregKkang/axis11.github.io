@@ -175,7 +175,7 @@
           "acceptedAt": "2026-11-16T02:03:39.233Z"
         },
         {
-          "status": "created",
+          "status": "sending",
           "payload": {
             "lang": "ko",
             "name": "AXIS11 commodities/hormuz-mine-claims ko",
