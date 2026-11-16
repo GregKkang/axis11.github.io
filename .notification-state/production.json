@@ -175,7 +175,7 @@
           "acceptedAt": "2026-11-16T02:03:39.233Z"
         },
         {
-          "status": "sending",
+          "status": "accepted",
           "payload": {
             "lang": "ko",
             "name": "AXIS11 commodities/hormuz-mine-claims ko",
@@ -193,7 +193,8 @@
             "link": "https://axis11research.com/research/commodities/hormuz-mine-claims/ko/",
             "htmlContent": "<!doctype html><html lang=\"ko\"><body><p>AXIS11 Research</p><h1><a href=\"https://axis11research.com/research/commodities/hormuz-mine-claims/ko/\" style=\"color:#111;text-decoration:none\">이란의 기뢰 경고의 진실은?</a></h1><p style=\"margin:0 0 18px;line-height:1.7\">이란은 8월 17일 미국·이란 양해각서(MOU)의 60일 시한이 끝난 뒤, 호르무즈 해협을 지나는 선박이 기뢰와 충돌했다는 주장을 수차례 내놨다. 이런 발표를 접할 때마다 나는 원유를 실은 유조선 여러 척이 크게 파손될 경우 바다로 흘러들 기름부터 걱정하게 된다.</p><p style=\"margin:0 0 18px;line-height:1.7\">그런데 같은 기간 걸프 원유 수출은 회복됐다. 국제에너지기구(IEA)에 따르면 10월 수출량은 하루 1,500만 배럴, 전쟁 전의 **82%**였다. 이란이 발표한 피해는 어디까지 확인됐고, 공격이 이어지는 동안 원유는 어떻게 계속 흘러나갈 수 있었을까? Kpler의 MOU 경과 분석 · IEA 11월 보고서 · UKMTO 11월 13일 보고서</p><p style=\"margin:0 0 18px;line-height:1.7\">이란 혁명수비대(IRGC)의 발표에는 같은 설명이 반복된다. 이란이 허가하지 않은 항로를 이용하던 선박이 기뢰와 충돌했다는 것이다. 선사 입장에서는 항로를 바꾸라는 압박으로 읽힐 수 있다. 하지만 공개 자료를 대조해 보면, 인근에서 유조선이 피격됐다는 보고는 있어도 그 배가 이란이 지목한 선박인지, 폭발 원인이 기뢰였는지까지 확인되는 경우는 드물다.</p><p style=\"margin:0 0 18px;line-height:1.7\">영국 해상무역기구(UKMTO)가 8월 17일부터 11월 11일까지 호르무즈 해협과 주변 해역에서 선박 공격 이후의 결과를 집계했다. 83건 중 전손은 6건이었다. 31건은 항해를 계속했고, 20건은 예인·구조 등 지원이 필요했다. 나머지 26건은 결과가 확인되지 않았다. 전손이 확인된 비중은 약 7%지만, 결과가 밝혀지지 않은 사례가 많아 추가 전손이 확인되면 이 비중은 올라갈 수 있다. UKMTO</p><p><a href=\"https://axis11research.com/research/commodities/hormuz-mine-claims/ko/\" style=\"display:inline-block;padding:12px 20px;background:#163a36;color:#fff;text-decoration:none;border-radius:6px\">리서치 읽기</a></p><p><a href=\"{{ unsubscribe }}\">구독 취소</a></p></body></html>"
           },
-          "campaignId": 18
+          "campaignId": 18,
+          "acceptedAt": "2026-11-16T02:03:44.227Z"
         }
       ]
     }
