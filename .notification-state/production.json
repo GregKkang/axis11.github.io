@@ -147,6 +147,52 @@
           "acceptedAt": "2026-11-10T06:31:06.892Z"
         }
       ]
+    },
+    "commodities/hormuz-mine-claims": {
+      "status": "active",
+      "sourceSha": "b81bad39c98be3155a7f63b2c6852f34ea97c157",
+      "campaigns": [
+        {
+          "status": "ready",
+          "payload": {
+            "lang": "en",
+            "name": "AXIS11 commodities/hormuz-mine-claims en",
+            "sender": {
+              "name": "AXIS11 Research",
+              "email": "greg@axis11research.com"
+            },
+            "recipients": {
+              "segmentIds": [
+                1
+              ]
+            },
+            "subject": "[AXIS11 Research] Iran’s Mine Claims and the Recovery in Gulf Oil Exports",
+            "previewText": "Iran has repeatedly claimed that ships struck mines in or near the Strait of Hormuz. The claims in the public record date back at least to 31 August, after the 17 August US–Iran memorandum of understanding. For the oil market, the concern is tangible: serious damage to a loaded tanker could disrupt shipments and spill crude.",
+            "link": "https://axis11research.com/research/commodities/hormuz-mine-claims/",
+            "htmlContent": "<!doctype html><html lang=\"en\"><body><p>AXIS11 Research</p><h1><a href=\"https://axis11research.com/research/commodities/hormuz-mine-claims/\" style=\"color:#111;text-decoration:none\">Iran’s Mine Claims and the Recovery in Gulf Oil Exports</a></h1><p style=\"margin:0 0 18px;line-height:1.7\">Iran has repeatedly claimed that ships struck mines in or near the Strait of Hormuz. The claims in the public record date back at least to 31 August, after the 17 August US–Iran memorandum of understanding. For the oil market, the concern is tangible: serious damage to a loaded tanker could disrupt shipments and spill crude.</p><p style=\"margin:0 0 18px;line-height:1.7\">Gulf crude exports nevertheless recovered. The International Energy Agency (IEA) puts October exports at 15 million barrels a day, or 82% of the pre-war level. Two questions follow: how much of the reported damage can be verified, and how have exporters kept oil moving with far fewer vessels transiting the strait? Kpler on the 60 days since the MOU · IEA November report · UKMTO, 13 November</p><p style=\"margin:0 0 18px;line-height:1.7\">Iran’s Islamic Revolutionary Guard Corps has repeatedly described ships striking mines after using routes it had not authorised. Public reports document vessel damage in the region. Matching an incident to a specific Iranian claim requires two further pieces of evidence: which vessel was hit and what caused the damage. In the cases below, that evidence is often missing.</p><p style=\"margin:0 0 18px;line-height:1.7\">United Kingdom Maritime Trade Operations (UKMTO) recorded 83 attacks on vessels in the Strait of Hormuz and nearby waters from 17 August to 11 November. Six were recorded as total losses. Of the rest, 31 continued their voyage, 20 required assistance such as towing or rescue, and 26 had an unknown outcome. The confirmed total losses account for about 7% of the cases; unresolved outcomes could raise that share. The tally covers attacks generally and does not identify the six losses as mine strikes. UKMTO</p><p><a href=\"https://axis11research.com/research/commodities/hormuz-mine-claims/\" style=\"display:inline-block;padding:12px 20px;background:#163a36;color:#fff;text-decoration:none;border-radius:6px\">Read Research</a></p><p><a href=\"{{ unsubscribe }}\">Unsubscribe</a></p></body></html>"
+          }
+        },
+        {
+          "status": "ready",
+          "payload": {
+            "lang": "ko",
+            "name": "AXIS11 commodities/hormuz-mine-claims ko",
+            "sender": {
+              "name": "AXIS11 Research",
+              "email": "greg@axis11research.com"
+            },
+            "recipients": {
+              "segmentIds": [
+                2
+              ]
+            },
+            "subject": "[AXIS11 Research] 이란의 기뢰 경고의 진실은?",
+            "previewText": "이란은 8월 17일 미국·이란 양해각서(MOU)의 60일 시한이 끝난 뒤, 호르무즈 해협을 지나는 선박이 기뢰와 충돌했다는 주장을 수차례 내놨다. 이런 발표를 접할 때마다 나는 원유를 실은 유조선 여러 척이 크게 파손될 경우 바다로 흘러들 기름부터 걱정하게 된다.",
+            "link": "https://axis11research.com/research/commodities/hormuz-mine-claims/ko/",
+            "htmlContent": "<!doctype html><html lang=\"ko\"><body><p>AXIS11 Research</p><h1><a href=\"https://axis11research.com/research/commodities/hormuz-mine-claims/ko/\" style=\"color:#111;text-decoration:none\">이란의 기뢰 경고의 진실은?</a></h1><p style=\"margin:0 0 18px;line-height:1.7\">이란은 8월 17일 미국·이란 양해각서(MOU)의 60일 시한이 끝난 뒤, 호르무즈 해협을 지나는 선박이 기뢰와 충돌했다는 주장을 수차례 내놨다. 이런 발표를 접할 때마다 나는 원유를 실은 유조선 여러 척이 크게 파손될 경우 바다로 흘러들 기름부터 걱정하게 된다.</p><p style=\"margin:0 0 18px;line-height:1.7\">그런데 같은 기간 걸프 원유 수출은 회복됐다. 국제에너지기구(IEA)에 따르면 10월 수출량은 하루 1,500만 배럴, 전쟁 전의 **82%**였다. 이란이 발표한 피해는 어디까지 확인됐고, 공격이 이어지는 동안 원유는 어떻게 계속 흘러나갈 수 있었을까? Kpler의 MOU 경과 분석 · IEA 11월 보고서 · UKMTO 11월 13일 보고서</p><p style=\"margin:0 0 18px;line-height:1.7\">이란 혁명수비대(IRGC)의 발표에는 같은 설명이 반복된다. 이란이 허가하지 않은 항로를 이용하던 선박이 기뢰와 충돌했다는 것이다. 선사 입장에서는 항로를 바꾸라는 압박으로 읽힐 수 있다. 하지만 공개 자료를 대조해 보면, 인근에서 유조선이 피격됐다는 보고는 있어도 그 배가 이란이 지목한 선박인지, 폭발 원인이 기뢰였는지까지 확인되는 경우는 드물다.</p><p style=\"margin:0 0 18px;line-height:1.7\">영국 해상무역기구(UKMTO)가 8월 17일부터 11월 11일까지 호르무즈 해협과 주변 해역에서 선박 공격 이후의 결과를 집계했다. 83건 중 전손은 6건이었다. 31건은 항해를 계속했고, 20건은 예인·구조 등 지원이 필요했다. 나머지 26건은 결과가 확인되지 않았다. 전손이 확인된 비중은 약 7%지만, 결과가 밝혀지지 않은 사례가 많아 추가 전손이 확인되면 이 비중은 올라갈 수 있다. UKMTO</p><p><a href=\"https://axis11research.com/research/commodities/hormuz-mine-claims/ko/\" style=\"display:inline-block;padding:12px 20px;background:#163a36;color:#fff;text-decoration:none;border-radius:6px\">리서치 읽기</a></p><p><a href=\"{{ unsubscribe }}\">구독 취소</a></p></body></html>"
+          }
+        }
+      ]
     }
   }
 }
