@@ -149,7 +149,7 @@
       ]
     },
     "commodities/hormuz-mine-claims": {
-      "status": "active",
+      "status": "complete",
       "sourceSha": "b81bad39c98be3155a7f63b2c6852f34ea97c157",
       "campaigns": [
         {
