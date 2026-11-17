@@ -247,6 +247,52 @@
           "acceptedAt": "2026-11-17T05:47:57.345Z"
         }
       ]
+    },
+    "global-macro/home-equity-borrowing": {
+      "status": "active",
+      "sourceSha": "711de69b6bd6e1c94e16bf8a632b3af3ef2322fc",
+      "campaigns": [
+        {
+          "status": "ready",
+          "payload": {
+            "lang": "en",
+            "name": "AXIS11 global-macro/home-equity-borrowing en",
+            "sender": {
+              "name": "AXIS11 Research",
+              "email": "greg@axis11research.com"
+            },
+            "recipients": {
+              "segmentIds": [
+                1
+              ]
+            },
+            "subject": "[AXIS11 Research] Is Home Equity Becoming America's Next Source of Consumer Credit?",
+            "previewText": "The WSJ’s These Charts Show How More People Are Pulling Cash Out of Their Homes describes a renewed rise in US borrowing against housing wealth. The question is what is driving that borrowing and what it means for household credit risk. This note analyses home equity lines of credit (HELOCs) alongside credit card, auto loan and mortgage balances and delinquencies.",
+            "link": "https://axis11research.com/research/global-macro/home-equity-borrowing/",
+            "htmlContent": "<!doctype html><html lang=\"en\"><body><p>AXIS11 Research</p><h1><a href=\"https://axis11research.com/research/global-macro/home-equity-borrowing/\" style=\"color:#111;text-decoration:none\">Is Home Equity Becoming America's Next Source of Consumer Credit?</a></h1><p style=\"margin:0 0 18px;line-height:1.7\">The WSJ’s These Charts Show How More People Are Pulling Cash Out of Their Homes describes a renewed rise in US borrowing against housing wealth. The question is what is driving that borrowing and what it means for household credit risk. This note analyses home equity lines of credit (HELOCs) alongside credit card, auto loan and mortgage balances and delinquencies.</p><p style=\"margin:0 0 18px;line-height:1.7\">A HELOC lets a homeowner draw and repay money within an approved credit limit, secured against the home. It can be particularly attractive to borrowers with low-rate mortgages. Rather than refinancing the entire mortgage at today’s higher rate, they can retain the existing loan and borrow only the additional amount through a HELOC. The New York Fed identifies this mortgage lock-in effect as a driver of recent demand.</p><p style=\"margin:0 0 18px;line-height:1.7\">The distinction is between using credit to smooth spending and relying on it to sustain spending that income no longer covers. HELOC growth alone cannot resolve that question. Rising balances across several credit products and their different repayment trends provide a fuller picture.</p><p style=\"margin:0 0 18px;line-height:1.7\">HELOC balances reached $481bn in 2026Q3, about 52% above the $317bn recorded in 2022Q1. Balances have risen for 18 consecutive quarters. The latest quarterly increase—about $23bn in the official release—was the largest since 2005.</p><p><a href=\"https://axis11research.com/research/global-macro/home-equity-borrowing/\" style=\"display:inline-block;padding:12px 20px;background:#163a36;color:#fff;text-decoration:none;border-radius:6px\">Read Research</a></p><p><a href=\"{{ unsubscribe }}\">Unsubscribe</a></p></body></html>"
+          }
+        },
+        {
+          "status": "ready",
+          "payload": {
+            "lang": "ko",
+            "name": "AXIS11 global-macro/home-equity-borrowing ko",
+            "sender": {
+              "name": "AXIS11 Research",
+              "email": "greg@axis11research.com"
+            },
+            "recipients": {
+              "segmentIds": [
+                2
+              ]
+            },
+            "subject": "[AXIS11 Research] 주택담보 차입 확대는 미국 가계의 신용위험 신호인가?",
+            "previewText": "WSJ의 These Charts Show How More People Are Pulling Cash Out of Their Homes는 미국 가계가 다시 주택을 담보로 현금을 인출하는 흐름을 소개했다. 이 기사를 읽고 확인하고 싶었던 것은 차입 증가 자체보다 그 배경에 어떤 위험이 있으며, 가계의 신용위험을 높이는 요인인지였다. 이를 살펴보기 위해 주택담보 신용한도인 HELOC와 함께 신용카드·자동차 대출·모기지의 잔액과 연체 자료를 분석해 보았다.",
+            "link": "https://axis11research.com/research/global-macro/home-equity-borrowing/ko/",
+            "htmlContent": "<!doctype html><html lang=\"ko\"><body><p>AXIS11 Research</p><h1><a href=\"https://axis11research.com/research/global-macro/home-equity-borrowing/ko/\" style=\"color:#111;text-decoration:none\">주택담보 차입 확대는 미국 가계의 신용위험 신호인가?</a></h1><p style=\"margin:0 0 18px;line-height:1.7\">WSJ의 These Charts Show How More People Are Pulling Cash Out of Their Homes는 미국 가계가 다시 주택을 담보로 현금을 인출하는 흐름을 소개했다. 이 기사를 읽고 확인하고 싶었던 것은 차입 증가 자체보다 그 배경에 어떤 위험이 있으며, 가계의 신용위험을 높이는 요인인지였다. 이를 살펴보기 위해 주택담보 신용한도인 HELOC와 함께 신용카드·자동차 대출·모기지의 잔액과 연체 자료를 분석해 보았다.</p><p style=\"margin:0 0 18px;line-height:1.7\">HELOC(Home Equity Line of Credit)는 주택을 담보로 승인된 한도 안에서 인출하고 상환하는 대출이다. 미국에는 30년 고정금리처럼 만기가 긴 모기지가 널리 활용된다. 과거 저금리에 받은 고정금리 모기지를 유지하면서 HELOC를 추가하면 기존 대출 이자는 낮게 유지하고, 필요한 추가 금액만 새로운 금리로 빌릴 수 있다. 기존 모기지 전체를 높은 금리로 바꿀 필요가 줄어드는 것이다. 뉴욕 연준도 이 잠김 효과를 최근 HELOC 수요의 배경으로 지목한다.</p><p style=\"margin:0 0 18px;line-height:1.7\">핵심 질문은 이 차입이 소비를 유연하게 조정하는 수단인지, 아니면 소득만으로 감당하기 어려운 지출을 부채로 유지하는 신호인지다. 현재 가계는 신용 사용을 늘리고 있으며 일부 상품에서 상환 부담도 커지고 있다. HELOC뿐 아니라 다른 소비자 신용의 연체 흐름을 함께 확인해야 하는 이유다.</p><p style=\"margin:0 0 18px;line-height:1.7\">2026년 3분기 HELOC 잔액은 4,810억 달러다. 2022년 1분기의 3,170억 달러보다 약 52% 늘었고, 18분기 연속 증가했다. 분기 증가액은 공식 발표 기준 약 230억 달러로 2005년 이후 가장 컸다.</p><p><a href=\"https://axis11research.com/research/global-macro/home-equity-borrowing/ko/\" style=\"display:inline-block;padding:12px 20px;background:#163a36;color:#fff;text-decoration:none;border-radius:6px\">리서치 읽기</a></p><p><a href=\"{{ unsubscribe }}\">구독 취소</a></p></body></html>"
+          }
+        }
+      ]
     }
   }
 }
