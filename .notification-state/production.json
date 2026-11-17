@@ -275,7 +275,7 @@
           "acceptedAt": "2026-11-17T22:02:50.357Z"
         },
         {
-          "status": "ready",
+          "status": "creating",
           "payload": {
             "lang": "ko",
             "name": "AXIS11 global-macro/home-equity-borrowing ko",
