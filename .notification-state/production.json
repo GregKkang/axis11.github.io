@@ -203,7 +203,7 @@
       "sourceSha": "fb04fb6713daecd63bb991d504c7396776094f09",
       "campaigns": [
         {
-          "status": "creating",
+          "status": "created",
           "payload": {
             "lang": "en",
             "name": "AXIS11 equities-bonds/ccc-spread-widening en",
@@ -220,7 +220,8 @@
             "previewText": "As US equities pulled back, the sharp widening in CCC spreads raised a question: was stress spreading from the weakest borrowers into the broader credit market? So far, the evidence points to concentrated stress against a backdrop of wider high yield spreads. With rates still high and inflation a concern, the distinction is worth watching.",
             "link": "https://axis11research.com/research/equities-bonds/ccc-spread-widening/",
             "htmlContent": "<!doctype html><html lang=\"en\"><body><p>AXIS11 Research</p><h1><a href=\"https://axis11research.com/research/equities-bonds/ccc-spread-widening/\" style=\"color:#111;text-decoration:none\">Why CCC Spreads Widened Faster Than the Rest of High Yield</a></h1><p style=\"margin:0 0 18px;line-height:1.7\">As US equities pulled back, the sharp widening in CCC spreads raised a question: was stress spreading from the weakest borrowers into the broader credit market? So far, the evidence points to concentrated stress against a backdrop of wider high yield spreads. With rates still high and inflation a concern, the distinction is worth watching.</p><p style=\"margin:0 0 18px;line-height:1.7\">Broad widening can signal that investors are reassessing growth or monetary policy. A much larger move at the bottom of the ratings scale can also reflect trouble at a handful of issuers. October showed both: a rise in spreads across high yield and a much sharper repricing in CCC and lower.</p><p style=\"margin:0 0 18px;line-height:1.7\">From 22 September to 20 October 2026, the option-adjusted spread (OAS) on US corporate bonds rated CCC and lower widened 252bp, from 10.75% to 13.27%. The B spread widened 67bp and the broad high yield index 65bp. The gap between CCC and B widened by 185bp over the same period.</p><p style=\"margin:0 0 18px;line-height:1.7\">Stress was concentrated in a handful of issuers and sectors. Vanguard’s November analysis found that four of roughly 150 CCC issuers in the Bloomberg high yield index accounted for more than 30% of the segment’s spread level at the time. Janus Henderson identified cable and satellite and wireline telecom as major contributors to the widening. CSC Holdings illustrates why: the cable operator faces stronger competition and pressure on revenue while carrying heavy debt. As earnings weaken, servicing that debt becomes harder and replacing it can cost more.</p><p><a href=\"https://axis11research.com/research/equities-bonds/ccc-spread-widening/\" style=\"display:inline-block;padding:12px 20px;background:#163a36;color:#fff;text-decoration:none;border-radius:6px\">Read Research</a></p><p><a href=\"{{ unsubscribe }}\">Unsubscribe</a></p></body></html>"
-          }
+          },
+          "campaignId": 19
         },
         {
           "status": "ready",
