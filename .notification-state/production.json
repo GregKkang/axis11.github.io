@@ -199,7 +199,7 @@
       ]
     },
     "equities-bonds/ccc-spread-widening": {
-      "status": "active",
+      "status": "complete",
       "sourceSha": "fb04fb6713daecd63bb991d504c7396776094f09",
       "campaigns": [
         {
