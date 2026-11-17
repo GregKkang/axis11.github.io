@@ -253,7 +253,7 @@
       "sourceSha": "711de69b6bd6e1c94e16bf8a632b3af3ef2322fc",
       "campaigns": [
         {
-          "status": "creating",
+          "status": "created",
           "payload": {
             "lang": "en",
             "name": "AXIS11 global-macro/home-equity-borrowing en",
@@ -270,7 +270,8 @@
             "previewText": "The WSJ’s These Charts Show How More People Are Pulling Cash Out of Their Homes describes a renewed rise in US borrowing against housing wealth. The question is what is driving that borrowing and what it means for household credit risk. This note analyses home equity lines of credit (HELOCs) alongside credit card, auto loan and mortgage balances and delinquencies.",
             "link": "https://axis11research.com/research/global-macro/home-equity-borrowing/",
             "htmlContent": "<!doctype html><html lang=\"en\"><body><p>AXIS11 Research</p><h1><a href=\"https://axis11research.com/research/global-macro/home-equity-borrowing/\" style=\"color:#111;text-decoration:none\">Is Home Equity Becoming America's Next Source of Consumer Credit?</a></h1><p style=\"margin:0 0 18px;line-height:1.7\">The WSJ’s These Charts Show How More People Are Pulling Cash Out of Their Homes describes a renewed rise in US borrowing against housing wealth. The question is what is driving that borrowing and what it means for household credit risk. This note analyses home equity lines of credit (HELOCs) alongside credit card, auto loan and mortgage balances and delinquencies.</p><p style=\"margin:0 0 18px;line-height:1.7\">A HELOC lets a homeowner draw and repay money within an approved credit limit, secured against the home. It can be particularly attractive to borrowers with low-rate mortgages. Rather than refinancing the entire mortgage at today’s higher rate, they can retain the existing loan and borrow only the additional amount through a HELOC. The New York Fed identifies this mortgage lock-in effect as a driver of recent demand.</p><p style=\"margin:0 0 18px;line-height:1.7\">The distinction is between using credit to smooth spending and relying on it to sustain spending that income no longer covers. HELOC growth alone cannot resolve that question. Rising balances across several credit products and their different repayment trends provide a fuller picture.</p><p style=\"margin:0 0 18px;line-height:1.7\">HELOC balances reached $481bn in 2026Q3, about 52% above the $317bn recorded in 2022Q1. Balances have risen for 18 consecutive quarters. The latest quarterly increase—about $23bn in the official release—was the largest since 2005.</p><p><a href=\"https://axis11research.com/research/global-macro/home-equity-borrowing/\" style=\"display:inline-block;padding:12px 20px;background:#163a36;color:#fff;text-decoration:none;border-radius:6px\">Read Research</a></p><p><a href=\"{{ unsubscribe }}\">Unsubscribe</a></p></body></html>"
-          }
+          },
+          "campaignId": 21
         },
         {
           "status": "ready",
