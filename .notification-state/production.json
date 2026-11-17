@@ -253,7 +253,7 @@
       "sourceSha": "711de69b6bd6e1c94e16bf8a632b3af3ef2322fc",
       "campaigns": [
         {
-          "status": "ready",
+          "status": "creating",
           "payload": {
             "lang": "en",
             "name": "AXIS11 global-macro/home-equity-borrowing en",
