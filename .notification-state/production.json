@@ -225,7 +225,7 @@
           "acceptedAt": "2026-11-17T05:47:52.954Z"
         },
         {
-          "status": "ready",
+          "status": "creating",
           "payload": {
             "lang": "ko",
             "name": "AXIS11 equities-bonds/ccc-spread-widening ko",
