@@ -297,6 +297,52 @@
           "acceptedAt": "2026-11-17T22:02:56.143Z"
         }
       ]
+    },
+    "equities-bonds/sp500-drawdowns-and-recovery": {
+      "status": "active",
+      "sourceSha": "95f6981f2224218770b5889521f5b242dd6fd8e3",
+      "campaigns": [
+        {
+          "status": "ready",
+          "payload": {
+            "lang": "en",
+            "name": "AXIS11 equities-bonds/sp500-drawdowns-and-recovery en",
+            "sender": {
+              "name": "AXIS11 Research",
+              "email": "greg@axis11research.com"
+            },
+            "recipients": {
+              "segmentIds": [
+                1
+              ]
+            },
+            "subject": "[AXIS11 Research] The S&P 500 Recovers Faster. Why Does It Feel Less Safe?",
+            "previewText": "The long-run record of equities supports the case for staying invested. But during a sell-off, investors do not know whether recovery is months or years away. They must decide whether to hold, reduce exposure or, after selling, buy back in. Those decisions affect their eventual return even if the index later regains its peak.",
+            "link": "https://axis11research.com/research/equities-bonds/sp500-drawdowns-and-recovery/",
+            "htmlContent": "<!doctype html><html lang=\"en\"><body><p>AXIS11 Research</p><h1><a href=\"https://axis11research.com/research/equities-bonds/sp500-drawdowns-and-recovery/\" style=\"color:#111;text-decoration:none\">The S&amp;P 500 Recovers Faster. Why Does It Feel Less Safe?</a></h1><p style=\"margin:0 0 18px;line-height:1.7\">The long-run record of equities supports the case for staying invested. But during a sell-off, investors do not know whether recovery is months or years away. They must decide whether to hold, reduce exposure or, after selling, buy back in. Those decisions affect their eventual return even if the index later regains its peak.</p><p style=\"margin:0 0 18px;line-height:1.7\">This note examines daily S&amp;P 500 closes. Comparing 1970–2009 with the period since 2020, the frequency of drawdowns reaching 20% rose from 1.50 to 2.90 per decade. Yet median peak-to-recovery time fell from 1,351 to 464 calendar days, and the share of trading days at least 20% below the running peak declined from 24.2% to 4.3%.</p><p style=\"margin:0 0 18px;line-height:1.7\">These measures describe different risks: how often losses occur, how quickly they arrive and how long they persist. Faster recovery improves one part of the experience without necessarily making the others easier to manage.</p><p style=\"margin:0 0 18px;line-height:1.7\">Drawdown measures the decline from the highest closing level reached so far. If an investor buys at 100, the index rises to 120 and then falls to 96, their purchase-price loss is 4%, while the index drawdown is 20%. The episode ends when the index returns to 120.</p><p><a href=\"https://axis11research.com/research/equities-bonds/sp500-drawdowns-and-recovery/\" style=\"display:inline-block;padding:12px 20px;background:#163a36;color:#fff;text-decoration:none;border-radius:6px\">Read Research</a></p><p><a href=\"{{ unsubscribe }}\">Unsubscribe</a></p></body></html>"
+          }
+        },
+        {
+          "status": "ready",
+          "payload": {
+            "lang": "ko",
+            "name": "AXIS11 equities-bonds/sp500-drawdowns-and-recovery ko",
+            "sender": {
+              "name": "AXIS11 Research",
+              "email": "greg@axis11research.com"
+            },
+            "recipients": {
+              "segmentIds": [
+                2
+              ]
+            },
+            "subject": "[AXIS11 Research] S&P 500은 더 빨리 회복하는데, 왜 더 불안하게 느껴질까?",
+            "previewText": "투자는 장기적 관점에서 해야 한다는 얘기를 자주 듣는다. 주식의 장기 누적 성과를 보면 그 의미는 충분히 이해된다. 하지만 막상 시장이 하락하는 동안 투자자는 그 조정이 몇 달 만에 끝날지 알 수 없다. 보유를 이어갈지, 위험을 줄일지, 줄였다면 언제 다시 늘릴지 결정해야 한다. 지수가 전고점을 되찾아도 하락 중에 내린 결정은 장기 성과에 남는다.",
+            "link": "https://axis11research.com/research/equities-bonds/sp500-drawdowns-and-recovery/ko/",
+            "htmlContent": "<!doctype html><html lang=\"ko\"><body><p>AXIS11 Research</p><h1><a href=\"https://axis11research.com/research/equities-bonds/sp500-drawdowns-and-recovery/ko/\" style=\"color:#111;text-decoration:none\">S&amp;P 500은 더 빨리 회복하는데, 왜 더 불안하게 느껴질까?</a></h1><p style=\"margin:0 0 18px;line-height:1.7\">투자는 장기적 관점에서 해야 한다는 얘기를 자주 듣는다. 주식의 장기 누적 성과를 보면 그 의미는 충분히 이해된다. 하지만 막상 시장이 하락하는 동안 투자자는 그 조정이 몇 달 만에 끝날지 알 수 없다. 보유를 이어갈지, 위험을 줄일지, 줄였다면 언제 다시 늘릴지 결정해야 한다. 지수가 전고점을 되찾아도 하락 중에 내린 결정은 장기 성과에 남는다.</p><p style=\"margin:0 0 18px;line-height:1.7\">S&amp;P 500 일별 종가를 분석해 봤다. 1970~2009년과 2020년 이후를 비교하면, 20% 이상 하락은 10년 환산 1.50건에서 2.90건으로 늘었다. 같은 깊이의 조정에서 전고점을 회복하기까지 걸린 기간의 중앙값은 1,351일에서 464일로 줄었다. 전고점보다 20% 이상 낮게 마감한 거래일의 비중도 24.2%에서 4.3%로 낮아졌다.</p><p style=\"margin:0 0 18px;line-height:1.7\">얼마나 자주 큰 조정을 겪었는지, 손실이 얼마나 빨리 쌓였는지, 깊은 손실이 얼마나 오래 지속됐는지를 나눠 보면, 회복이 빨라진 시장이 어떤 기회를 주고 어떤 위험을 남기는지 판단할 수 있다.</p><p style=\"margin:0 0 18px;line-height:1.7\">이 분석에서 쓰는 드로다운(drawdown)은 그날의 종가가 이전 최고 종가보다 얼마나 낮은지를 뜻한다. 100에 매수해 120까지 올랐다가 96으로 떨어졌다면 매수 시점 대비 손실은 4%지만 드로다운은 20%다. 지수가 다시 120에 도달하면 그 사건이 끝난 것으로 봤다.</p><p><a href=\"https://axis11research.com/research/equities-bonds/sp500-drawdowns-and-recovery/ko/\" style=\"display:inline-block;padding:12px 20px;background:#163a36;color:#fff;text-decoration:none;border-radius:6px\">리서치 읽기</a></p><p><a href=\"{{ unsubscribe }}\">구독 취소</a></p></body></html>"
+          }
+        }
+      ]
     }
   }
 }
