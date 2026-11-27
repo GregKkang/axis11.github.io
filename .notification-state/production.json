@@ -303,7 +303,7 @@
       "sourceSha": "95f6981f2224218770b5889521f5b242dd6fd8e3",
       "campaigns": [
         {
-          "status": "ready",
+          "status": "creating",
           "payload": {
             "lang": "en",
             "name": "AXIS11 equities-bonds/sp500-drawdowns-and-recovery en",
