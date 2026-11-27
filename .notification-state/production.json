@@ -325,7 +325,7 @@
           "acceptedAt": "2026-11-27T03:37:17.650Z"
         },
         {
-          "status": "ready",
+          "status": "creating",
           "payload": {
             "lang": "ko",
             "name": "AXIS11 equities-bonds/sp500-drawdowns-and-recovery ko",
