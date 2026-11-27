@@ -299,7 +299,7 @@
       ]
     },
     "equities-bonds/sp500-drawdowns-and-recovery": {
-      "status": "active",
+      "status": "complete",
       "sourceSha": "95f6981f2224218770b5889521f5b242dd6fd8e3",
       "campaigns": [
         {
