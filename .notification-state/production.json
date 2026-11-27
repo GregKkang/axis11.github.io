@@ -303,7 +303,7 @@
       "sourceSha": "95f6981f2224218770b5889521f5b242dd6fd8e3",
       "campaigns": [
         {
-          "status": "creating",
+          "status": "created",
           "payload": {
             "lang": "en",
             "name": "AXIS11 equities-bonds/sp500-drawdowns-and-recovery en",
@@ -320,7 +320,8 @@
             "previewText": "The long-run record of equities supports the case for staying invested. But during a sell-off, investors do not know whether recovery is months or years away. They must decide whether to hold, reduce exposure or, after selling, buy back in. Those decisions affect their eventual return even if the index later regains its peak.",
             "link": "https://axis11research.com/research/equities-bonds/sp500-drawdowns-and-recovery/",
             "htmlContent": "<!doctype html><html lang=\"en\"><body><p>AXIS11 Research</p><h1><a href=\"https://axis11research.com/research/equities-bonds/sp500-drawdowns-and-recovery/\" style=\"color:#111;text-decoration:none\">The S&amp;P 500 Recovers Faster. Why Does It Feel Less Safe?</a></h1><p style=\"margin:0 0 18px;line-height:1.7\">The long-run record of equities supports the case for staying invested. But during a sell-off, investors do not know whether recovery is months or years away. They must decide whether to hold, reduce exposure or, after selling, buy back in. Those decisions affect their eventual return even if the index later regains its peak.</p><p style=\"margin:0 0 18px;line-height:1.7\">This note examines daily S&amp;P 500 closes. Comparing 1970–2009 with the period since 2020, the frequency of drawdowns reaching 20% rose from 1.50 to 2.90 per decade. Yet median peak-to-recovery time fell from 1,351 to 464 calendar days, and the share of trading days at least 20% below the running peak declined from 24.2% to 4.3%.</p><p style=\"margin:0 0 18px;line-height:1.7\">These measures describe different risks: how often losses occur, how quickly they arrive and how long they persist. Faster recovery improves one part of the experience without necessarily making the others easier to manage.</p><p style=\"margin:0 0 18px;line-height:1.7\">Drawdown measures the decline from the highest closing level reached so far. If an investor buys at 100, the index rises to 120 and then falls to 96, their purchase-price loss is 4%, while the index drawdown is 20%. The episode ends when the index returns to 120.</p><p><a href=\"https://axis11research.com/research/equities-bonds/sp500-drawdowns-and-recovery/\" style=\"display:inline-block;padding:12px 20px;background:#163a36;color:#fff;text-decoration:none;border-radius:6px\">Read Research</a></p><p><a href=\"{{ unsubscribe }}\">Unsubscribe</a></p></body></html>"
-          }
+          },
+          "campaignId": 23
         },
         {
           "status": "ready",
